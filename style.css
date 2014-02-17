@@ -23,3 +23,12 @@ div img {
   border: 2px solid white;
   border-radius: 40px;
 }
+
+a {
+  color: #FFFC52;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FF5291;
+}
