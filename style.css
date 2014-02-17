@@ -14,6 +14,7 @@ span {
 
 h1 {
   text-align: center ;
+  font-family: Futura;
 }
 
 div img {
@@ -26,6 +27,7 @@ div img {
 
 div p {
   text-align: center;
+  font-family: Helvetica;
 }
 
 a {
