@@ -24,6 +24,10 @@ div img {
   border-radius: 40px;
 }
 
+div p {
+  text-align: center;
+}
+
 a {
   color: #FFFC52;
   text-decoration: none;
