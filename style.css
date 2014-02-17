@@ -1,3 +1,11 @@
+body {
+  overflow: hidden;
+  background: #CCC url(https://scontent-b-cdg.xx.fbcdn.net/hphotos-frc1/t31/883231_10151765921711583_838076547_o.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+
 span {
   color: #FF8652;
   background-color: #41A2CC;
