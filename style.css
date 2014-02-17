@@ -17,7 +17,7 @@ h1 {
 }
 
 div img {
-  text-align: center;
-  margin: 10px;
-  border: 5px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid white;
 }
