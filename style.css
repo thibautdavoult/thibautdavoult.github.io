@@ -1,4 +1,4 @@
-div:nth-child(1) {
+.bg {
   color: white;
   clear: both;
   overflow: hidden;
@@ -10,7 +10,7 @@ div:nth-child(1) {
           background-size: cover;
 }
 
-div:nth-child(2) {
+.bg:after {
   color: white;
   overflow: hidden;
   clear: both;
