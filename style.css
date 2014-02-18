@@ -35,6 +35,12 @@ h1 {
   font-family: Futura;
 }
 
+h2 {
+  margin-top: 150px;
+  text-align: center ;
+  font-family: Futura;
+}
+
 div img {
   height: 200px;
   display: block;
