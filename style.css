@@ -56,10 +56,14 @@ div p {
   font-family: Helvetica;
 }
 
-a {
+p a {
   color: black;
   background-color: white;
   text-decoration: none;
+}
+
+footer a {
+  margin-right: 15px;
 }
 
 /*
