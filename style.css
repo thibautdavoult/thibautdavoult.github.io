@@ -11,6 +11,7 @@
 }
 
 .bg:after {
+  content:'';
   color: white;
   overflow: hidden;
   clear: both;
