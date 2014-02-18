@@ -9,7 +9,7 @@
           background-size: cover;
 }
 
-.bg:after {
+.bg2 {
   content:'';
   color: white;
   overflow: hidden;
