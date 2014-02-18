@@ -21,6 +21,10 @@
        -o-background-size: cover;
 }
 
+.border {
+  border: 2px solid white;
+}
+
 span {
   color: black;
   background-color: white;
