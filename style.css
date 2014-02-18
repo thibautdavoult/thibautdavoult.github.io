@@ -67,6 +67,7 @@ div p {
   color: black;
   background-color: white;
   text-decoration: none;
+  padding: 0 5px 2px 5px;
 }
 
 .fa a {
