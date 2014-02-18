@@ -41,6 +41,10 @@ h2 {
   font-family: Futura;
 }
 
+body {
+  text-align: center;
+}
+
 div img {
   height: 200px;
   display: block;
