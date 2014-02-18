@@ -2,7 +2,7 @@
   color: white;
   overflow: hidden;
   display: block;
-  background: #CCC url(http://image.vsco.co/1/52fc884923f22358158/52ff7156716708c765000370/1600x1069/vsco_021514.jpg) no-repeat center fixed;
+  background: #CCC url(http://image.vsco.co/1/52fc884923f22358158/52ff7156716708c765000370/1600x1069/vsco_021514.jpg) no-repeat center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
@@ -15,7 +15,7 @@
   overflow: hidden;
   clear: both;
   display: block;
-  background: #CCC url(https://scontent-b-cdg.xx.fbcdn.net/hphotos-frc1/t31/883231_10151765921711583_838076547_o.jpg) no-repeat center fixed;
+  background: #CCC url(https://scontent-b-cdg.xx.fbcdn.net/hphotos-frc1/t31/883231_10151765921711583_838076547_o.jpg) no-repeat center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
