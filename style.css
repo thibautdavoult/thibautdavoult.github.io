@@ -19,6 +19,7 @@ h1 {
 }
 
 div img {
+  height: 100px;
   display: block;
   margin-top: 200px;
   margin-left: auto;
