@@ -9,6 +9,8 @@
           background-size: cover;
 }
 
+/*
+
 .bg2 {
   content:'';
   color: white;
@@ -20,6 +22,7 @@
      -moz-background-size: cover;
        -o-background-size: cover;
 }
+*/
 
 .border {
   border: 2px solid black;
