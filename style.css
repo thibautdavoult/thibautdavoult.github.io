@@ -56,13 +56,15 @@ div p {
   font-family: Helvetica;
 }
 
-p a {
+a {
   color: black;
   background-color: white;
   text-decoration: none;
 }
 
-footer a {
+a.fa {
+  text-decoration: none;
+  color: white;
   margin-right: 15px;
 }
 
