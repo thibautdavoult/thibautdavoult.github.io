@@ -80,6 +80,10 @@ p {
   font-size: 0.8em;
 }
 
+.fa a:last-child {
+  margin-right: 0;
+}
+
 /*
 a:hover {
 
