@@ -60,9 +60,10 @@ div img {
   border-radius: 500px;
 }
 
-div p {
+p {
   text-align: center;
   font-family: Helvetica;
+  font-size: 20px;
 }
 
 .content a {
