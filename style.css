@@ -19,6 +19,7 @@ div:nth-child(2) {
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
+}
 
 span {
   color: black;
