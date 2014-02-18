@@ -8,6 +8,16 @@ div:nth-child(1) {
           background-size: cover;
 }
 
+div:nth-child(2) {
+  color: white;
+  overflow: hidden;
+  background: #CCC url(https://scontent-b-cdg.xx.fbcdn.net/hphotos-frc1/t31/883231_10151765921711583_838076547_o.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
 span {
   color: black;
   background-color: white;
