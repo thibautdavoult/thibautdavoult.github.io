@@ -34,7 +34,8 @@ div p {
 }
 
 a {
-  color: #FFFC52;
+  color: black;
+  background-color: white;
   text-decoration: none;
 }
 
