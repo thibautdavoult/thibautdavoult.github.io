@@ -12,7 +12,6 @@ div:nth-child(2) {
   color: white;
   overflow: hidden;
   float: left;
-  clear: both;
   display: block;
   background: #CCC url(https://scontent-b-cdg.xx.fbcdn.net/hphotos-frc1/t31/883231_10151765921711583_838076547_o.jpg) no-repeat center fixed;
 
