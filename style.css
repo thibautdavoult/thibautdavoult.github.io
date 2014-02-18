@@ -40,5 +40,6 @@ a {
 }
 
 a:hover {
-  color: #FF5291;
+  color: white;
+  background-color: black;
 }
