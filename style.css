@@ -64,6 +64,7 @@ a {
 
 .fa {
   text-decoration: none;
+  background-color: none;
   color: white;
   margin-right: 15px;
 }
