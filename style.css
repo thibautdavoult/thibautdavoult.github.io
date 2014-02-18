@@ -1,5 +1,6 @@
 .bg {
   color: white;
+  overflow: hidden;
   display: block;
   background: #CCC url(http://image.vsco.co/1/52fc884923f22358158/52ff7156716708c765000370/1600x1069/vsco_021514.jpg) no-repeat center fixed;
   -webkit-background-size: cover;
