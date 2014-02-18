@@ -64,6 +64,8 @@ div p {
 
 .fa {
   margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .fa a {
