@@ -9,7 +9,7 @@ div:nth-child(1) {
           background-size: cover;
 }
 
-#2div {
+div:nth-child(2) {
   color: white;
   overflow: hidden;
   clear: both;
