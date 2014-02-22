@@ -80,7 +80,7 @@ p:last-child  {
   margin-bottom: 100px;
 }
 
-.bg a {
+a {
   color: black;
   background-color: white;
   text-decoration: none;
@@ -90,6 +90,7 @@ p:last-child  {
 .fa a {
   text-decoration: none;
   color: white;
+  background-color: transparent;
   margin-right: 18px;
   font-size: 0.8em;
 }
