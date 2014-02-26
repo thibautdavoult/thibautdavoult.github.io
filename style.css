@@ -2,7 +2,18 @@
   color: white;
   overflow: hidden;
   display: block;
-  background: #CCC url(http://image.vsco.co/1/52fc884923f22358158/52ff6e03726708d721000465/1600x1069/vsco_021514.jpg) no-repeat center fixed;
+  background: #CCC url(images/bg-paris.png) no-repeat center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+
+}
+
+.bg2 {
+  color: white;
+  overflow: hidden;
+  display: block;
+  background: #CCC url(images/earth-moon.png) no-repeat center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
@@ -47,6 +58,8 @@ h2 {
 
 body {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 div img {
@@ -65,7 +78,11 @@ p {
   font-size: 20px;
 }
 
-.content a {
+p:last-child  {
+  margin-bottom: 100px;
+}
+
+a {
   color: black;
   background-color: white;
   text-decoration: none;
@@ -75,6 +92,7 @@ p {
 .fa a {
   text-decoration: none;
   color: white;
+  background-color: transparent;
   margin-right: 18px;
   font-size: 0.8em;
 }
