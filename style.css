@@ -41,6 +41,7 @@
 span {
   color: black;
   background-color: white;
+  padding: 0 5px 2px 5px;
 }
 
 h1 {
@@ -58,6 +59,8 @@ h2 {
 
 body {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 div img {
