@@ -16,6 +16,10 @@
             <p>Check out the music I listen to on <a href="http://last.fm/user/RatquRit/" target="_blank">my last.fm profile</a></p>
             <p>Check out my <a href="http://www.imdb.com/user/ur24578599/ratings?start=1&view=detail&sort=ratings_date:desc&defaults=1&scb=0.45420138095505536" target="_blank">favorite movies on my IMDB page</a></p>
 
+            <p>This is the last film I've seen: <span id="film"></span>, I gave it a rating of <span id="film_rating"></span></p>
+
+            <p>The last album I listened to was: <span id="album"><span></p>
+
         </div>
 <div class="bg2">
 <h1>Social Media</h1>
@@ -44,6 +48,31 @@
         </p>
 
   </div>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+  function imdb(data) {
+    $("#film").html("<a href='" + data.results.collection1[0].film_name.href + "' target='_blank'>" + data.results.collection1[0].film_name.text + "</a>");
+    $("#film_rating").html(data.results.collection1[0].film_rating + "/10");
+  }
+
+  $.ajax({
+    "url":"http://www.kimonolabs.com/api/1vvwp5au?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=imdb",
+    "crossDomain":true,
+    "dataType":"jsonp"
+  });
+
+  function lastfm(data) {
+    $("#album").html("<a href='" + data.results.collection1[0].Album.href + "' target='_blank'>" + data.results.collection1[0].Album.text + "</a>" + " by " + data.results.collection1[0].Band.text);
+
+  }
+
+  $.ajax({
+    "url":"http://www.kimonolabs.com/api/a8emy7a0?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=lastfm",
+    "crossDomain":true,
+    "dataType":"jsonp"
+  });
+</script>
 
 <!--
       <div class="border">
