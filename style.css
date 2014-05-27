@@ -1,4 +1,4 @@
-.bg {
+/*.bg {
   color: white;
   overflow: hidden;
   display: block;
@@ -39,9 +39,9 @@
 }
 
 span {
-  color: black;
-  background-color: white;
-  padding: 0 5px 2px 5px;
+  color: #FFCC99;
+  background-color: transparent;
+  padding: 0 0px 0px 0px;
 }
 
 h1 {
@@ -59,6 +59,13 @@ h2 {
 
 body {
   text-align: center;
+  color: #CCCCCC;
+  overflow: hidden;
+  display: block;
+  background: #CCC url(images/earth-moon.png) no-repeat center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
   margin: 0;
   padding: 0;
 }
@@ -84,17 +91,17 @@ p:last-child  {
 }
 
 a {
-  color: black;
-  background-color: white;
+  color: #FFCC99;
+  background-color: transparent;
   text-decoration: none;
   padding: 0 5px 2px 5px;
 }
 
 .fa a {
   text-decoration: none;
-  color: white;
+  color: #FFCC99;
   background-color: transparent;
-  margin-right: 18px;
+  margin-right: 8px;
   font-size: 0.8em;
 }
 
