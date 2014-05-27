@@ -14,7 +14,7 @@
        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1/c79.0.320.320/p320x320/1466047_10151753080941583_2075983170_n.jpg">
           <h1>Hello, I'm <span>Thibaut Davoult</span>. Welcome to my website.</h1>
 
-            <p>This is the last film I've seen: <span id="film"></span>, I gave it a rating of <span id="film_rating"></span></p>
+            <p>This is the last film I've seen: <span id="film"></span> by <span id="film_director"></span>, I gave it a rating of <span id="film_rating"></span></p>
 
             <p>The last album I listened to was: <span id="album"><span></p>
 
@@ -52,6 +52,7 @@
   function imdb(data) {
     $("#film").html("<a href='" + data.results.collection1[0].film_name.href + "' target='_blank'>" + data.results.collection1[0].film_name.text + "</a>");
     $("#film_rating").html(data.results.collection1[0].film_rating + "/10");
+    $("#film_director").text(data.results.collection1[0].film_director.text);
   }
 
   $.ajax({
