@@ -1,3 +1,95 @@
+/*
+color scheme ID: http://colorschemedesigner.com/#0z31TcOw0w0w0 
+*/
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans|Open+Sans);
+
+.border {
+  border: 2px solid black;
+}
+
+span {
+  color: #72BF86;
+  background-color: transparent;
+  padding: 0 0px 0px 0px;
+}
+
+h1 {
+  text-align: center ;
+  font-family: 'Futura', sans-serif;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+h2 {
+  margin-top: 10px;
+  text-align: center ;
+  font-family: Futura;
+}
+
+body {
+  text-align: center;
+  font-family: 'Open sans', sans-serif;
+  color: #CCCCCC;
+  overflow: hidden;
+  display: block;
+  background: #CCC url(images/earth-moon.png) no-repeat center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+div img {
+  height: 150px;
+  display: block;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white;
+  border-radius: 500px;
+}
+
+p {
+  text-align: center;
+  
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+p:last-child  {
+  margin-bottom: 200px;
+}
+
+a {
+  color: #FFCC99;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#FFE3C7;
+}
+
+.fa a {
+  text-decoration: none;
+  color: #FFCC99;
+  background-color: transparent;
+  margin-right: 12px;
+  font-size: 0.6em;
+}
+
+.fa a:hover {
+  color:#FFE3C7;
+}
+
+.fa a:last-child {
+  margin-right: 0;
+}
+
+
 /*.bg {
   color: white;
   overflow: hidden;
@@ -31,86 +123,5 @@
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
-}
-*/
-
-.border {
-  border: 2px solid black;
-}
-
-span {
-  color: #FFCC99;
-  background-color: transparent;
-  padding: 0 0px 0px 0px;
-}
-
-h1 {
-  text-align: center ;
-  font-family: Futura;
-  margin-top: 60px;
-  margin-bottom: 50px;
-}
-
-h2 {
-  margin-top: 150px;
-  text-align: center ;
-  font-family: Futura;
-}
-
-body {
-  text-align: center;
-  color: #CCCCCC;
-  overflow: hidden;
-  display: block;
-  background: #CCC url(images/earth-moon.png) no-repeat center;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-  margin: 0;
-  padding: 0;
-}
-
-div img {
-  height: 150px;
-  display: block;
-  margin-top: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid white;
-  border-radius: 500px;
-}
-
-p {
-  text-align: center;
-  font-family: Helvetica;
-  font-size: 20px;
-}
-
-p:last-child  {
-  margin-bottom: 100px;
-}
-
-a {
-  color: #FFCC99;
-  background-color: transparent;
-  text-decoration: none;
-  padding: 0 5px 2px 5px;
-}
-
-.fa a {
-  text-decoration: none;
-  color: #FFCC99;
-  background-color: transparent;
-  margin-right: 8px;
-  font-size: 0.8em;
-}
-
-.fa a:last-child {
-  margin-right: 0;
-}
-
-/*
-a:hover {
-
 }
 */
