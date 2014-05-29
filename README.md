@@ -1,3 +1,4 @@
-This is my website. I use it to tinker with HTML/CSS and learn Git in the process.
+This is my website. I use it to tinker with HTML/CSS, as well as Javascript. I learn the basics of git in the process.
 
-You can see it at: http://thibautdavoult.github.io/mypage
+
+No custom domain name set up yet, so you can see it at: http://thibautdavoult.github.io/
