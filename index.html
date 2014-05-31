@@ -12,11 +12,11 @@
 
         <div class="bg">
        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1/c79.0.320.320/p320x320/1466047_10151753080941583_2075983170_n.jpg">
-          <h1>Hello, I'm <span>Thibaut Davoult</span>. Welcome to my humble page.</h1>
+          <h1>Hello, I'm <span>Thibaut Davoult</span>.</h1>
 
-            <p>The last film I've seen was <span id="film"></span> by <span id="film_director"></span>, I gave it a rating of <span id="film_rating"></span></p>
+            <p>The last film I've seen was <span id="film"></span> by <span id="film_director"></span>, I gave it a rating of <span id="film_rating"></span><span id="opinion"></span>.</p>
 
-            <p>The last album I listened to was <span id="album"></span> by <span id="band"></span></p>
+            <p>The last album I listened to was <span id="album"></span> by <span id="band"></span>.</p>
 
 <p class="fa">
           <a href="http://twitter.com/thibautdavoult/" target="_blank">
@@ -50,7 +50,37 @@
     $("#film").html("<a href='" + data.results.collection1[0].film_name.href + "' target='_blank'>" + data.results.collection1[0].film_name.text + "</a>");
     $("#film_rating").html(data.results.collection1[0].film_rating + "/10");
     $("#film_director").text(data.results.collection1[0].film_director.text);
-  }
+  };
+
+  /*
+
+   var opinion = function(rating) {
+    if (rating === "9") {
+        $("#opinion").text("a masterpiece");
+     }
+    else if (rating === "9") {
+        $("#opinion").text("amazing");
+    }
+    else if (rating === "8") {
+        $("#opinion").text("great");
+    }
+    else if (rating === "7") {
+        $("#opinion").text("good");
+    }
+    else if (rating === "6") {
+        $("#opinion").text("pretty good");
+    }
+    else if (rating === "5") {
+        $("#opinion").text("pretty boring");
+    }
+    else {
+        $("#opinion").text("the worst");
+    }
+}
+
+opinion("data.results.collection1[0].film_rating");
+
+*/
 
   $.ajax({
     "url":"http://www.kimonolabs.com/api/1vvwp5au?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=imdb",
