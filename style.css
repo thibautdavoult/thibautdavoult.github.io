@@ -8,6 +8,63 @@ color scheme ID: http://colorschemedesigner.com/#0z31TcOw0w0w0
   border: 2px solid black;
 }
 
+@-webkit-keyframes DownFade {
+  0%   { opacity: 0;
+  transform: translateY(-20px); }
+  100% { opacity: 1; 
+  transform: translateY(0px); }
+}
+@-moz-keyframes DownFade {
+  0%   { opacity: 0; 
+  transform: translateY(-20px);}
+  100% { opacity: 1; 
+  transform: translateY(0px);}
+}
+@-o-keyframes DownFade {
+  0%   { opacity: 0; 
+  transform: translateY(-20px);}
+  100% { opacity: 1;
+  transform: translateY(0px);}
+}
+@keyframes DownFade {
+  0%   { opacity: 0; 
+  transform: translateY(-20px);}
+  100% { opacity: 1;
+  transform: translateY(0px);}
+}
+
+.DownFade {
+  -webkit-animation: DownFade 1.5s;
+  -moz-animation:    DownFade 1.5s;
+  -o-animation:      DownFade 1.5s;
+  animation:         DownFade 1.5s;
+}
+
+@-webkit-keyframes Fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes Fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes Fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes Fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.Fade {
+  -webkit-animation: Fade 2s 1s;
+  -moz-animation:    Fade 2s 1s;
+  -o-animation:      Fade 2s 1s;
+  animation:         Fade 2s 1s;
+}
+
+
 span {
   color: #72BF86;
   background-color: transparent;
@@ -53,7 +110,6 @@ div img {
 
 p {
   text-align: center;
-  
   font-size: 20px;
   margin-bottom: 10px;
   margin-top: 10px;
