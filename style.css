@@ -95,7 +95,7 @@ body {
   color: #CCCCCC;
   overflow: hidden;
   display: block;
-  background: #CCC url(images/earth-moon.png) no-repeat center;
+  background: #1e2514 url(images/earth-moon.png) no-repeat center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
        -o-background-size: cover;
