@@ -10,30 +10,31 @@ color scheme ID: http://colorschemedesigner.com/#0z31TcOw0w0w0
 
 @-webkit-keyframes DownFade {
   0%   { opacity: 0;
-  transform: translateY(-20px); }
+         top: -20px; }
   100% { opacity: 1; 
-  transform: translateY(0px); }
+         top: 0px; }
 }
 @-moz-keyframes DownFade {
   0%   { opacity: 0; 
-  transform: translateY(-20px);}
+         top: -20px;}
   100% { opacity: 1; 
-  transform: translateY(0px);}
+         top: 0px;}
 }
 @-o-keyframes DownFade {
   0%   { opacity: 0; 
-  transform: translateY(-20px);}
+         top: -20px;}
   100% { opacity: 1;
-  transform: translateY(0px);}
+         top: 0px;}
 }
 @keyframes DownFade {
   0%   { opacity: 0; 
-  transform: translateY(-20px);}
+         top: -20px;}
   100% { opacity: 1;
-  transform: translateY(0px);}
+         top: 0px;}
 }
 
 .DownFade {
+  position: relative;
   -webkit-animation: DownFade 1.5s;
   -moz-animation:    DownFade 1.5s;
   -o-animation:      DownFade 1.5s;
@@ -42,26 +43,30 @@ color scheme ID: http://colorschemedesigner.com/#0z31TcOw0w0w0
 
 @-webkit-keyframes Fade {
   0%   { opacity: 0; }
+  75%  { opacity: 0.6;}
   100% { opacity: 1; }
 }
 @-moz-keyframes Fade {
   0%   { opacity: 0; }
+  75%  { opacity: 0.6;}
   100% { opacity: 1; }
 }
 @-o-keyframes Fade {
   0%   { opacity: 0; }
+  75%  { opacity: 0.6;}
   100% { opacity: 1; }
 }
 @keyframes Fade {
   0%   { opacity: 0; }
+  75%  { opacity: 0.6;}
   100% { opacity: 1; }
 }
 
 .Fade {
-  -webkit-animation: Fade 2s 1s;
-  -moz-animation:    Fade 2s 1s;
-  -o-animation:      Fade 2s 1s;
-  animation:         Fade 2s 1s;
+  -webkit-animation: Fade 3s 0.5s ease-in;
+  -moz-animation:    Fade 3s 0.5s ease-in;
+  -o-animation:      Fade 3s 0.5s ease-in;
+  animation:         Fade 3s 0.5s ease-in;
 }
 
 
