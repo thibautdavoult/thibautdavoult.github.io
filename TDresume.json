@@ -1,92 +1,91 @@
 {
 bio: {
-firstName: Thibaut,
-lastName: Davoult,
-email: {
-work: thibaut@totems.co, // e.g. thomas@facebook.com
-personal: thibaut.davoult@gmail.com // thomas@gmail.com
+	firstName: Thibaut,
+	lastName: Davoult,
+	email: {
+		work: thibaut@totems.co,
+		personal: thibaut.davoult@gmail.com
 },
-phone: { // Phone numbers are stored as strings so use any format you like
-work: ,	
-personal: +33-6-87-98-94-74, // e.g. 732-757-2923
+phone: {
+	work: ,	
+	personal: +33-6-87-98-94-74,
 },
-summary: string, // Write a short 2-3 sentence biography about yourself
+summary: string,
 location: {
-city: Paris,
-countryCode: FR, // e.g. US, AU, IN
-region: string, // If you specify a region, you don't need a state e.g. Queensland
-state: string // If you specify a state, you don't need a region e.g. Texas
+	city: Paris,
+	countryCode: FR,
+	region: string,
+	state: string
 },
-websites: { // The value you use as your key, will generally become the label
-mySite: "http://thibautdavoult.github.io",
+websites: {
+	mySite: http://thibautdavoult.github.io/,
 },
-profiles: { // Specify any number of social networks that you participate in
-twitter: thibautdavoult, // e.g. neutralthoughts
-github: thibautdavoult // e.g. thomasdavis
-instagram: thibautdavoult
+profiles: {
+	twitter: thibautdavoult,
+	github: thibautdavoult,
+	instagram: thibautdavoult
 }
 },
 work: [{
-company: TOTEMS, // e.g. Facebook
-position: Content & Community, // e.g. Software Engineer
-website: "http://totems.co", // e.g. http://facebook.com
-startDate: 2012-07-02, // resume.json uses the ISO 8601 date standard e.g. 2014-06-29
-endDate: string, // e.g. 2012-06-29
-summary: Geneerating growth for both TOTEMS Analytics and Connect procucts via inbound leads. Increasing traffic on the website. Creating B2B blogposts covering topics relevant to TOTEMS' industry, // Give an overview of your responsibilities at the company
-highlights: [ // Specify multiple accomplishments
-Increased traffic by 170% from Q1+Q2 2013 to Q1+Q2 2014 through SEO and Content creation,
-Rebranding: Assisted in all, operated in some of the changing public-facing aspects of the rebranding from Nitrogram to TOTEMS,
- // e.g. Increased profits by 20% from 2011-2012 through viral advertising
+	company: TOTEMS,
+	position: Content & Community,
+	website: http://totems.co
+	startDate: 2012-07-02,
+	endDate: string,
+	summary: Geneerating growth for both TOTEMS Analytics and Connect procucts via inbound leads. Increasing traffic on the website. Creating B2B blogposts covering topics relevant to TOTEMS' industry, // Give an overview of your responsibilities at the company
+	highlights: [
+		Increased traffic by 170% from Q1+Q2 2013 to Q1+Q2 2014 through SEO and Content creation,
+		Rebranding: Assisted in all, operated in some of the changing public-facing aspects of the rebranding from Nitrogram to TOTEMS,
 ]
 }],
 education: [{
-institution: IESEG School of Management, // e.g. Massachusetts Institute of Technology
-area: Marketing & Management, // e.g. Arts
-studyType: Masters, // e.g. Bachelor
-startDate: 2008-09-03, // e.g. 2014-06-29
-endDate: 2012-12-23, // e.g. 2012-06-29
-courses: [ // List an notable courses/subjects
-Knowledge Management,
-Project Management,
-Marketing Management,
-Consumer Behavior, // e.g. H1302 - Introduction to American history
+	institution: IESEG School of Management,
+	area: Marketing & Management,
+	studyType: Masters,
+	startDate: 2008-09-03,
+	endDate: 2012-12-23,
+	courses: [
+		Knowledge Management,
+		Project Management,
+		Marketing Management,
+		Consumer Behavior,
 ]
 }],
-awards: [{ // Specify any awards you have received throughout your professional career
-title: string, // e.g. One of the 100 greatest minds of the century
-awardDate: string, // e.g. 1989-06-12
-awarder: string // e.g. Time Magazine
+awards: [{
+	title: string,
+	awardDate: string,
+	awarder: string
 }],
-publications: [{ // Specify your publications through your career
-name: string, // e.g. The World Wide Web
-publisher: string, // e.g. IEEE, Computer Magazine
-releaseDate: string, // e.g. 1990-08-01
-website: string // e.g. http://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html
+publications: [{
+	name: string,
+	publisher: string,
+	releaseDate: string,
+	website: string
 }],
-skills: [{ // List out your professional skill-set
-name: SEO, // e.g. Web Development
-level: Intermediate, // e.g. Master
-keywords: [ // List some keywords pertaining to this skill
-SEO,
-SEM,
-SERP,
-Backlink generation,
-Guest blogging,
-Content creation,
-on-page optimization, // e.g. HTML
+skills: [{
+	name: SEO,
+	level: Intermediate,
+	keywords: [
+		SEO,
+		SEM,
+		SERP,
+		Backlink generation,
+		Guest blogging,
+		Content creation,
+		on-page optimization,
 ]
 
 
 
 }],
 hobbies: [{
-name: string, // e.g. Philosophy
-keywords: [
-string // e.g. Friedrich Nietzsche
+	name: string,
+	keywords: [
+		string
 ]
 }],
-references: [{ // List references you have received
-name: string, // e.g. Timothy Cook
-reference: string // e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.
+references: [{
+	name: string,
+	reference: string
 }]
 }
