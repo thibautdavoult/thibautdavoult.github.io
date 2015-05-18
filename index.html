@@ -80,9 +80,10 @@
 
 
   $.ajax({
-    "url":"http://www.kimonolabs.com/api/1vvwp5au?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=imdb",
-    "crossDomain":true,
-    "dataType":"jsonp"
+    url: "http://www.kimonolabs.com/api/1vvwp5au?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=imdb",
+    jsonp: "imdb",
+    crossDomain: true,
+    dataType: "jsonp"
   });
 
   function lastfm(data) {
@@ -92,9 +93,10 @@
   }
 
   $.ajax({
-    "url":"https://www.kimonolabs.com/api/aocumgg0?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=lastfm",
-    "crossDomain":true,
-    "dataType":"jsonp"
+    url: "https://www.kimonolabs.com/api/aocumgg0?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=lastfm",
+    jsonp: "lastfm",
+    crossDomain :true,
+    dataType: "jsonp"
   });
 
 </script>
