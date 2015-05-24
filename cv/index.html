@@ -1,0 +1,114 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thibaut Davoult</title>
+    <meta name="author" content="Thibaut Davoult">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  </head>
+    <body> 
+
+        <div class="bg">
+       <img src="images/thibaut-face.jpg">
+          
+          <h1>Hello, I'm <span class="DownFade">Thibaut Davoult</span>.</h1>
+          
+            <p class="DownFade">The last film I've seen was <span id="film"></span> by <span id="film_director"></span>, I gave it a <span id="film_rating"></span> rating: <span id="opinion"></span>.</p>
+
+            <p class="DownFade">The last album I listened to was <span id="album"></span> by <span id="band"></span>.<br/><br/></p>
+
+<p class="fa">
+          <a href="http://twitter.com/thibautdavoult/" target="_blank">
+            <i class="fa fa-twitter fa-2x"></i>
+          </a>
+          <a href="http://davoult.tumblr.com/" target="_blank">
+            <i class="fa fa-tumblr fa-2x"></i>
+          </a>
+          <a href="http://instagram.com/thibautdavoult/" target="_blank">
+            <i class="fa fa-instagram fa-2x"></i>
+          </a>
+          <a href="http://open.spotify.com/user/118698609" target="_blank">
+            <i class="fa fa-spotify fa-2x"></i>
+          </a>
+          <a href="https://github.com/thibautdavoult" target="_blank">
+            <i class="fa fa-github fa-2x"></i>
+          </a>
+          <a href="http://www.linkedin.com/in/thibautdavoult" target="_blank">
+            <i class="fa fa-linkedin fa-2x"></i>
+          </a>
+          <a href="mailto:thibaut.davoult@gmail.com" target="_blank">
+            <i class="fa fa-envelope-square fa-2x"></i></a>
+          </a>
+        </p>
+
+  </div>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+  function imdb(data) {
+    $("#film").html("<a href='" + data.results.collection1[0].film_name.href + "' target='_blank'>" + data.results.collection1[0].film_name.text + "</a>");
+    $("#film_rating").html(data.results.collection1[0].film_rating + "/10");
+    $("#film_director").text(data.results.collection1[0].film_director.text);
+    $("#opinion").text(opinion(data.results.collection1[0].film_rating));
+  };
+
+   function opinion(rating) {
+    if (rating == 10) {
+        return "a masterpiece";
+     }
+    else if (rating == 9) {
+        return "amazing";
+    }
+    else if (rating == 8) {
+        return "great";
+    }
+    else if (rating == 7) {
+        return "good";
+    }
+    else if (rating == 6) {
+        return "pretty good";
+    }
+    else if (rating == 5) {
+        return "pretty boring";
+    }
+    else {
+        return "the worst";
+    }
+}
+
+
+  $.ajax({
+    url: "http://www.kimonolabs.com/api/1vvwp5au?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=imdb",
+    jsonp: "imdb",
+    crossDomain: true,
+    dataType: "jsonp"
+  });
+
+  function lastfm(data) {
+    $("#album").html("<a href='" + data.results.collection1[0].Album.href + "' target='_blank'>" + data.results.collection1[0].Album.text + "</a>");
+    $("#band").text(data.results.collection1[0].Band.text);
+
+  }
+
+  $.ajax({
+    url: "https://www.kimonolabs.com/api/aocumgg0?apikey=a51813d8c7299c1e2506b8b8654c2bd4&callback=lastfm",
+    jsonp: "lastfm",
+    crossDomain :true,
+    dataType: "jsonp"
+  });
+
+</script>
+
+<!--
+      <div class="border">
+      </div>
+      <div class="bg2">
+        <h2>Michael Cera</h2>
+        <p>is awesome</p>
+      </div>
+-->      
+    </body>
+</html>
