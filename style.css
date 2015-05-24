@@ -95,10 +95,8 @@ body {
   color: #CCCCCC;
   overflow: hidden;
   display: block;
-  background: #1e2514 url(images/earth-moon.png) no-repeat center;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
+  background-image: url(images/waves.jpg);
+  background-repeat: repeat-y repeat-x;
   margin: 0;
   padding: 0;
 }
