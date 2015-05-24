@@ -5,43 +5,29 @@
 /*****************************************************************************/
 
 /* Global Reset */
-
-@import url(http://fonts.googleapis.com/css?family=PT+Sans|Open+Sans);
-
 * {
   margin: 0;
   padding: 0;
-}
-
-hr {
-  color: #666;
-  border-top: 0px solid #eeeeee;
-  margin-top: -2em;
-  margin-bottom: 2em;
-  overflow: hidden;
 }
 
 html, body { height: 100%; }
 
 body {
   background-color: #FFF;
-  font-family: 'Open Sans', sans-serif;
+  font: 13.34px Helvetica, Arial, sans-serif;
   font-size: small;
   text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: 180%;
-  font-family: 'PT Sans', sans-serif;
-  margin-bottom: :1em ;
-  }
+  font-size: 100%; }
 
 h1 { margin-bottom: 1em; }
 p { margin: 1em 0; }
 
-a         { color: #54A2D3; text-decoration: none;}
-a:hover   { color: #54A2D3; text-decoration: underline;}
-a:visited { color: #54A2D3; }
+a         { color: #00a; }
+a:hover   { color: #000; }
+a:visited { color: #a0a; }
 
 /*****************************************************************************/
 /*
@@ -53,7 +39,7 @@ ul.posts {
   margin-bottom: 2em;
 }
 
-ul.posts li { 
+ul.posts li {
   line-height: 1.75em;
 }
 
@@ -70,17 +56,11 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
-  font-size: 140%;
+  font-size: 115%;
   text-align: justify;
-  width: 40em;
+  width: 42em;
   margin: 3em auto 2em;
-  line-height: 1.7em;
-}
-
-.site h2 {
-  color: #286286;
-  font-size: 140%;
-  margin-bottom: 1.5em;
+  line-height: 1.5em;
 }
 
 .site .header a {
@@ -90,16 +70,15 @@ ul.posts span {
 
 .site .header h1.title {
   display: inline-block;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 .site .header h1.title a {
-  color: #54A2D3;
+  color: #a00;
 }
 
 .site .header h1.title a:hover {
-  color: #54A2D3;
-  text-decoration: underline;
+  color: #000;
 }
 
 .site .header a.extra {
@@ -109,29 +88,27 @@ ul.posts span {
 
 .site .header a.extra:hover {
   color: #000;
-  text-decoration: underline;
 }
 
 .site .meta {
   color: #aaa;
-  text-align: right;
 }
 
 .site .footer {
   font-size: 80%;
   color: #666;
-  border-top: 1px solid #eeeeee;
-  margin-top: 1.5em;
+  border-top: 4px solid #eee;
+  margin-top: 2em;
   overflow: hidden;
 }
 
 .site .footer .contact {
-  float: right;
-  margin-right: 2em;
+  float: left;
+  margin-right: 3em;
 }
 
 .site .footer .contact a {
-  color: #54A2D3;
+  color: #8085C1;
 }
 
 .site .footer .rss {
@@ -151,20 +128,6 @@ ul.posts span {
 /*****************************************************************************/
 
 /* standard */
-.post h1 {
-  color: #000;
-  font-weight: bold;
-  font-size: 150%;
-
-}
-
-.post h2 {
-  color: #000;
-  font-size: 130%;
-
-}
-
-
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
