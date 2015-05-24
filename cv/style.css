@@ -1,187 +1,59 @@
-/*
-color scheme ID: http://colorschemedesigner.com/#0z31TcOw0w0w0 
-*/
-
-@import url(http://fonts.googleapis.com/css?family=PT+Sans|Open+Sans);
-
-.border {
-  border: 2px solid black;
-}
-
-@-ms-viewport{
-  width: device-width;
-}
-
-@-webkit-keyframes DownFade {
-  0%   { opacity: 0;
-         top: -150pxpx; }
-  100% { opacity: 1; 
-         top: 0px; }
-}
-@-moz-keyframes DownFade {
-  0%   { opacity: 0; 
-         top: -150pxpx;}
-  100% { opacity: 1; 
-         top: 0px;}
-}
-@-o-keyframes DownFade {
-  0%   { opacity: 0; 
-         top: -150pxpx;}
-  100% { opacity: 1;
-         top: 0px;}
-}
-@keyframes DownFade {
-  0%   { opacity: 0; 
-         top: -150pxpx;}
-  100% { opacity: 1;
-         top: 0px;}
-}
-
-.DownFade {
-  position: relative;
-  -webkit-animation: DownFade 4s;
-  -moz-animation:    DownFade 4s;
-  -o-animation:      DownFade 4s;
-  animation:         DownFade 4s;
-}
-
-/*
-@-webkit-keyframes Fade {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-moz-keyframes Fade {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-o-keyframes Fade {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes Fade {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.Fade {
-  -webkit-animation: Fade 2s 0.5s ease-in;
-  -moz-animation:    Fade 2s 0.5s ease-in;
-  -o-animation:      Fade 2s 0.5s ease-in;
-  animation:         Fade 2s 0.5s ease-in;
-}
-*/
-
-span {
-  color: #72BF86;
-  background-color: transparent;
-  padding: 0 0px 0px 0px;
-}
-
-h1 {
-  text-align: center ;
-  font-family: 'Futura', sans-serif;
-  margin-top: 40px;
-  margin-bottom: 50px;
-}
-
-h2 {
-  margin-top: 10px;
-  text-align: center ;
-  font-family: Futura;
+body {
+  margin: 0;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+  font-size: small;
+  line-height: 1.5em;
+  color: #000;
 }
 
 body {
-  text-align: center;
-  font-family: 'Open sans', sans-serif;
-  color: #CCCCCC;
-  overflow: hidden;
-  display: block;
-  background-image: url(images/waves.jpg);
-  background-repeat: repeat-y repeat-x;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  width: 600px;
+  font-size: 96%;
 }
 
-div img {
-  height: 150px;
-  display: block;
-  margin-top: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid white;
-  border-radius: 500px;
+h1 {
+  font-size: 280%;
+  margin: 0;
+  padding: 0.5em 0 0.2em 0;
+}
+
+h2 {
+  font-size: 120%;
+  margin: 0;
+  padding: 0 0 0.4em 0;
+}
+
+h3 {
+  font-size: 180%;
+  margin: 0;
+  padding: 1em 0 0.5em 0;
+}
+
+h4 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.8em 0 0 0;
+}
+
+ul li span.title {
+  font-weight: bold;
 }
 
 p {
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+#notice {
+  background: #C0C0C0;
+  width: 100%;
+  border: 2px solid #999;
+  padding: 0.5em;
   text-align: center;
-  font-size: 20px;
-  margin-bottom: 10px;
-  margin-top: 10px;
 }
-
-p:last-child  {
-  margin-bottom: 200px;
-}
-
-a {
-  color: #FFCC99;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color:#FFE3C7;
-}
-
-.fa a {
-  text-decoration: none;
-  color: #FFCC99;
-  background-color: transparent;
-  margin-right: 12px;
-  font-size: 0.6em;
-}
-
-.fa a:hover {
-  color:#FFE3C7;
-}
-
-.fa a:last-child {
-  margin-right: 0;
-}
-
-
-/*.bg {
-  color: white;
-  overflow: hidden;
-  display: block;
-  background: #CCC url(images/earth-moon.png) no-repeat center;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-
-}
-
-.bg2 {
-  color: white;
-  overflow: hidden;
-  display: block;
-  background: #CCC url(images/bg-paris.png) no-repeat center;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-}
-
-/*
-
-.bg2 {
-  content:'';
-  color: white;
-  overflow: hidden;
-  clear: both;
-  display: block;
-  background: #CCC url(https://scontent-b-cdg.xx.fbcdn.net/hphotos-frc1/t31/883231_10151765921711583_838076547_o.jpg) no-repeat center;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-}
-*/
