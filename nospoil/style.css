@@ -1,0 +1,11 @@
+h1 {
+  font-size: 7em;
+  padding-top: 200px;
+  text-align: center;
+  max-width: 100%;
+  margin: auto;
+  text-shadow: 20px 20px #ADF5FF,
+  40px 40px #0075A2,
+  60px 60px #F76283,
+  80px 80px #FF3838;
+}
