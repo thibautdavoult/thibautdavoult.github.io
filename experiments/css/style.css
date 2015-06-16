@@ -1,0 +1,98 @@
+/* first color = D25000 */
+
+a {
+  transition: color .4s;
+  color: #265C83;
+}
+
+a:link,
+a:visited { color: #265C83; }
+a:hover   { color: #7FDBFF; }
+a:active  {
+  transition: color .3s;
+  color: #007BE6;
+}
+
+.link { text-decoration: none; }
+
+
+.main-header {
+	padding-top: 60px;
+	height: 250px;
+	color: white;
+	text-align: center;
+	background: linear-gradient(rgba(38, 92, 131, 0.5), 
+				rgba(255, 255, 255, 1));
+/*				#fff url("../img/face2.jpg") no-repeat */
+	background-size: cover;
+	background-position: 0% 20%;
+}
+
+body {
+	background: #fff;
+	margin: 0;	
+}
+
+h1 {
+	font-size: 2.5em;
+	font-family: verdana;
+	text-shadow: #000 3px 3px 3px;
+	padding: 0 30px 0px 30px;	
+}
+
+h2 {
+	font-family: verdana;
+	font-size: 1.1em;
+	text-shadow: #000 2px 2px 3px;
+	padding: 0 60px 0px 60px;
+}
+
+h3 {
+	font-family: helvetica;
+	font-size: 2em;
+	margin-left: 20%;
+}
+
+
+.sitelist {
+	list-style-type: none;
+}
+
+.goallist li {
+	margin-top: 7px;
+}
+
+
+li {
+	font-family: helvetica;
+	font-size: 2em;
+	margin-left: 20%;
+}
+
+footer {
+	margin: 50px 20% 20px 20%;
+	border-top: 5px solid #265C83;
+	padding: 30px 30px 30px 30px;
+/*	padding-top: 30px;*/
+/*	padding-bottom: 30px;*/
+	text-align: center;
+	font-size: 2em;
+}
+
+@media (max-width: 740px) {
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1em;
+	}
+
+	li {
+		font-size: 1.5em;
+	}
+	.main-header {
+		height: 200px;
+		padding-top: 40px;
+	}
+}
