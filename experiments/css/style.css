@@ -2,11 +2,11 @@
 
 a {
   transition: color .4s;
-  color: #265C83;
+  color: #4585B2;
 }
 
 a:link,
-a:visited { color: #265C83; }
+a:visited { color: #4585B2; }
 a:hover   { color: #7FDBFF; }
 a:active  {
   transition: color .3s;
@@ -34,7 +34,7 @@ body {
 }
 
 h1 {
-	font-size: 2.5em;
+	font-size: 2.8em;
 	font-family: verdana;
 	text-shadow: #000 3px 3px 3px;
 	padding: 0 30px 0px 30px;	
@@ -42,14 +42,14 @@ h1 {
 
 h2 {
 	font-family: verdana;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	text-shadow: #000 2px 2px 3px;
 	padding: 0 60px 0px 60px;
 }
 
 h3 {
 	font-family: helvetica;
-	font-size: 2em;
+	font-size: 1.8em;
 	margin-left: 20%;
 }
 
@@ -65,7 +65,7 @@ h3 {
 
 li {
 	font-family: helvetica;
-	font-size: 2em;
+	font-size: 1.8em;
 	margin-left: 20%;
 }
 
@@ -76,7 +76,7 @@ footer {
 /*	padding-top: 30px;*/
 /*	padding-bottom: 30px;*/
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.6em;
 }
 
 @media (max-width: 740px) {
