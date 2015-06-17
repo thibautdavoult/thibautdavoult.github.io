@@ -1,4 +1,4 @@
 This is my website. I use it to tinker with HTML/CSS, as well as Javascript. I learn the basics of git in the process.
 
 
-No custom domain name set up yet, so you can see it at: http://thibautdavoult.github.io/
+I'm just setting up the domain name so there might be issues accessing the site (also I used this as an excuse to make a commit)
