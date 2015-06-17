@@ -1,4 +1,3 @@
-This is my website. I use it to tinker with HTML/CSS, as well as Javascript. I learn the basics of git in the process.
+This is my personal website. I use it to learn web development in conjunction with classes from Treehouse.
 
-
-I'm just setting up the domain name so there might be issues accessing the site (also I used this as an excuse to make a commit)
+It's hopefully changing often and enough to keep bypassers entertained. Don't expect anything mind-blowing though, I'm only getting started.
