@@ -2,11 +2,11 @@
 
 a {
   transition: color .4s;
-  color: #265C83;
+  color: #3778a6;
 }
 
 a:link,
-a:visited { color: #265C83; }
+a:visited { color: #3778a6; }
 a:hover   { color: #7FDBFF; }
 a:active  {
   transition: color .3s;
@@ -17,15 +17,15 @@ a:active  {
 
 
 .main-header {
-	padding-top: 60px;
-	height: 250px;
+	height: 200px;
+	padding-top: 40px;		
 	color: white;
 	text-align: center;
 	background: linear-gradient(rgba(38, 92, 131, 0.5), 
-				rgba(255, 255, 255, 1));
-/*				#fff url("../img/face2.jpg") no-repeat */
+				rgba(255, 255, 255, 1)),
+				#fff url("../img/face2.jpg") no-repeat; 
 	background-size: cover;
-	background-position: 0% 20%;
+	background-position: 0 20%;
 }
 
 body {
@@ -34,39 +34,33 @@ body {
 }
 
 h1 {
-	font-size: 2.5em;
+	font-size: 2em;	
 	font-family: verdana;
 	text-shadow: #000 3px 3px 3px;
-	padding: 0 30px 0px 30px;	
+	padding: 0 30px 0 30px;	
 }
 
 h2 {
 	font-family: verdana;
-	font-size: 1.1em;
+	font-size: 1em;
 	text-shadow: #000 2px 2px 3px;
-	padding: 0 60px 0px 60px;
+	padding: 0 60px 0 60px;
 }
 
 h3 {
 	font-family: helvetica;
-	font-size: 2em;
-	margin-left: 20%;
+	font-size: 1.5em;
+	margin: 0 10% 0 10%;
 }
-
 
 .sitelist {
 	list-style-type: none;
 }
 
-.goallist li {
-	margin-top: 7px;
-}
-
-
 li {
 	font-family: helvetica;
-	font-size: 2em;
-	margin-left: 20%;
+	font-size: 1.5em;
+	margin: 7px 10% 0 10%;
 }
 
 footer {
@@ -79,20 +73,26 @@ footer {
 	font-size: 2em;
 }
 
-@media (max-width: 740px) {
+@media (min-width: 740px) {
 	h1 {
-		font-size: 2em;
+		font-size: 2.5em;
 	}
 
 	h2 {
-		font-size: 1em;
+		font-size: 1.1em;
+	}
+
+	h3 {
+		margin-top: 40px;
+		font-size: 2em;
 	}
 
 	li {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	.main-header {
-		height: 200px;
-		padding-top: 40px;
+		padding-top: 60px;
+		height: 250px;
 	}
+
 }
