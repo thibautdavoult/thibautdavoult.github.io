@@ -14,4 +14,6 @@ h1 {
 .rounded {
 	font-family: helvetica, 'open sans';
 	font-size: 150px;
+	padding: 0 15px;
+	margin-top: -50px;
 }
