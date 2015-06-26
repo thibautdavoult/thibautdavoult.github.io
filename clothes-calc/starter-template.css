@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;
+}
+
+h1 {
+	text-transform: uppercase;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.rounded {
+	font-family: helvetica, 'open sans';
+	font-size: 150px;
+	padding: 0 15px;
+	margin-top: -50px;
+}
