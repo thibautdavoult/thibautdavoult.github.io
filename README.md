@@ -1,3 +1,7 @@
-This is my personal website. I use it to learn web development in conjunction with classes from Treehouse.
+My personal website accessible from thibautdavoult.com
 
-It's hopefully changing often and enough to keep bypassers entertained. Don't expect anything mind-blowing though, I'm only getting started.
+I use it to learn web development in conjunction with classes from Treehouse.
+
+Find the full list of my experiments here: thibautdavoult.com/experiments
+
+It's hopefully changing often and enough to keep visitors entertained. Don't expect anything mind-blowing though, I'm only getting started.
