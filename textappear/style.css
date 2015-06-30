@@ -97,7 +97,8 @@ a {
 }
 
 /* Mobile (stolen 100% from gflandre) */
-@media (max-width: 650px) {
+
+@media (max-width: 835px) {
   html, body {
     width: 100%;
   }
