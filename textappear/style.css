@@ -95,3 +95,18 @@ a {
 .easteregg {
   color: #FF1654;
 }
+
+/* Mobile (stolen 100% from gflandre) */
+@media (max-width: 650px) {
+  html, body {
+    width: 100%;
+  }
+
+  body {
+    padding-left: 20px;
+  }
+
+  #main {
+    width: auto;
+    margin-top: 20px;
+  }
