@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $(".textswitch").click(function(){
-    $(this).toggleClass("hidden").next().removeClass("hidden");
+    $(this).toggleClass("hidden").next().toggleClass("hidden");
+    // $(this).next().removeClass("hidden");
   });
 });
 
