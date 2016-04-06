@@ -1,5 +1,5 @@
 /*
-color scheme ID: http://colorschemedesigner.com/#0z31TcOw0w0w0 
+color scheme ID: http://colorschemedesigner.com/#0z31TcOw0w0w0
 */
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans|Open+Sans);
@@ -15,23 +15,23 @@ color scheme ID: http://colorschemedesigner.com/#0z31TcOw0w0w0
 @-webkit-keyframes DownFade {
   0%   { opacity: 0;
          top: -150pxpx; }
-  100% { opacity: 1; 
+  100% { opacity: 1;
          top: 0px; }
 }
 @-moz-keyframes DownFade {
-  0%   { opacity: 0; 
+  0%   { opacity: 0;
          top: -150pxpx;}
-  100% { opacity: 1; 
+  100% { opacity: 1;
          top: 0px;}
 }
 @-o-keyframes DownFade {
-  0%   { opacity: 0; 
+  0%   { opacity: 0;
          top: -150pxpx;}
   100% { opacity: 1;
          top: 0px;}
 }
 @keyframes DownFade {
-  0%   { opacity: 0; 
+  0%   { opacity: 0;
          top: -150pxpx;}
   100% { opacity: 1;
          top: 0px;}
@@ -96,7 +96,7 @@ body {
   color: #CCCCCC;
   overflow: hidden;
   display: block;
-  background-image: url(images/waves.jpg);
+  background-image: url(../images/waves.jpg);
   background-repeat: repeat-y repeat-x;
   margin: 0;
   padding: 0;
