@@ -1,7 +1,7 @@
 /* first color = D25000 */
 
 a {
-  transition: color .4s;
+  transition: color .1s;
   color: #3778a6;
 }
 
@@ -9,7 +9,7 @@ a:link,
 a:visited { color: #3778a6; }
 a:hover   { color: #7FDBFF; }
 a:active  {
-  transition: color .3s;
+  transition: color .1s;
   color: #007BE6;
 }
 
@@ -17,15 +17,12 @@ a:active  {
 
 
 .main-header {
-	height: 200px;
 	padding-top: 40px;
 	color: white;
 	text-align: center;
-	background: linear-gradient(rgba(38, 92, 131, 0.5),
-				rgba(255, 255, 255, 1)),
-				#fff url("../img/face2.jpg") no-repeat;
-	background-size: cover;
-	background-position: 0 20%;
+  background: #ff6e7f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff6e7f, #bfe9ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ff6e7f, #bfe9ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 body {
@@ -36,14 +33,19 @@ body {
 h1 {
 	font-size: 1.5em;
 	font-family: verdana;
-	text-shadow: #000 3px 3px 3px;
-	padding: 0 30px 0 30px;
+	text-shadow: #000 0.5px 0.5px 0.5px;
+  vertical-align: middle;
+	margin-top: 10px;
+}
+
+.array {
+  color: #FFE347;
 }
 
 h2 {
 	font-family: verdana;
 	font-size: 1em;
-	text-shadow: #000 2px 2px 3px;
+	text-shadow: #000 0.5px 0.5px 0.5px;
 	padding: 0 60px 0 60px;
 }
 
@@ -91,8 +93,7 @@ footer {
 		font-size: 2em;
 	}
 	.main-header {
-		padding-top: 60px;
-		height: 250px;
+		height: 150px;
 	}
 
 }
