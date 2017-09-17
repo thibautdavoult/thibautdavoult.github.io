@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+  font-family: 'Reem Kufi', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.title {
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 12px 0 0 0;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+h2 {
+  font-family: 'Open Sans';
+  margin: 0 0 26px 0;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board {
+  width: 400px;
+  height: 400px;
+  background-color: #4F6D7A;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+
+/*
+
+Color schemes
+
+https://coolors.co/084c61-db504a-f7b801-4f6d7a-56a3a6
+https://coolors.co/3d348b-7678ed-f7b801-f18701-f35b04
+
+
+*/
