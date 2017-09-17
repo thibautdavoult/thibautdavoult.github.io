@@ -21,13 +21,13 @@ Etc. Game keeps on until :
 - Color switching & global mechanic (which tiles switch, which don't, etc)
 - 2 players
 - End of game
-- Ending screen
+- Ending screen, counting tiles to declare winner
 
 
-## Nice to have features
+## Nice to have features (importance from + to ++)
 
-- Changing size of the board
-- Changing color scheme of tiles
-- Colorblind mode
-- Nightmode
-- Animations (?, not sure if it'll actually improve the game)
+- Changing size of the board (++)
+- Colorblind mode (++)
+- Changing color scheme of tiles (+)
+- Nightmode (+)
+- Animations (?, not sure if it'll actually improve the game) (+)
