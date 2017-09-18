@@ -2,12 +2,13 @@
 // Game UI and Behavior on Screen goes here
 //****************************************
 
-$(document).ready(function(){
+// $(document).ready(function () {
 
-// some jquery stuff goes here
+  // jquery stuff goes here
+
+  flood = new CoolBloqs();
 
 
-
-});
+//});
 
 // some other stuff goes here
