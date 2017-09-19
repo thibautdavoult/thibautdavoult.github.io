@@ -13,38 +13,36 @@ function CoolBloqs (/*width, length*/) {
     width: width,
     length: length
   };
-  this.tiles = ["red", "green", "blue", "purple"]; // Possible tiles colors (1st iteration has 4 fixed colors)
+  this.availableColors = ["red", "green", "blue", "purple"]; // Possible tiles colors (1st iteration has 4 fixed colors)
 //****************************************
 // Generating a board filled with random tiles
 //****************************************
 
-  this.board = new Array(that.boardsize.length).fill(null).map(function () {
-    return new Array(that.boardsize.width).fill(null).map(function () {
+  this.board = new Array(that.boardsize.length).fill(null).map(function (_, i) { // _ is for element that is not specified (here null)
+    return new Array(that.boardsize.width).fill(null).map(function (_, j) {
       var tile = {
         ownership: null,
-        color: that.randomTileColor()
+        color: that.randomTileColor(),
+        row: i,
+        col: j
       };
       return tile;
     });
   });
-  //****************************************
-  // Setting Players' starting tiles
-  //****************************************
+//****************************************
+// Setting Players' starting tiles
+//****************************************
 
   console.log(this.board);
 
-  var player1StartingZone = this.board[0][0];
+  this.board[0][0].ownership = 0;
+  this.board[that.boardsize.length - 1][that.boardsize.width - 1].ownership = 1;
 
-  var player1Zone = that.board.forEach(function (row, rowIndex) {
-    that.board.forEach(function (elem, colIndex) {
-      if ( rowIndex === player1StartingZone[0] ) {
-        tile.ownership = 1;
-        return player1Zone;
-      }
-    });
-  });
-//  var player2Start = this.board[that.boardsize.length - 1][that.boardsize.width - 1];
+  //****************************************
+  // Player1's Zone color function
+  //****************************************
 
+  this.currentColor = [this.board[0][0].color, this.board[that.boardsize.length - 1][that.boardsize.width - 1].color];
 
 
 
@@ -77,18 +75,63 @@ boardRepresentation = [
 // 1. Picking a random tile color
 
 CoolBloqs.prototype.randomTileColor = function() {
-  var index = Math.floor(Math.random() * 4);
-  var tileColor = this.tiles[index];
+  var index = Math.floor(Math.random() * this.availableColors.length);
+  var tileColor = this.availableColors[index];
   return tileColor;
 };
 
-// ****** ACTIVATE TO TEST FUNCTION
-// flood.randomTileColor();
-// ****** END ACTIVATE TO TEST FUNCTION
+// 2. Simplifying method to select a tile
+//
+// CoolBloqs.prototype.get(i,j) {
+//   if ((!i) || (!j)) {
+//     return undefined;
+//   } return this.board[i][j];
+// };
 
+//****************************************
+// Zone's color function
+//****************************************
 
+CoolBloqs.prototype.neighboorTiles = function(i,j) {
+  switch (this.get(i,j)) {
+    case this.get(i+1, j):
+      if (this.get(i+1, j).color !== picked.color) {
+        return;
+      } if (this.get(i+1, j).color === picked.color) {
+        this.get(i+1,j).ownership = this.playerTurn;
+        return this.neighboorTiles(i+1, j);
+
+      }
+    break;
+    case this.get(i-1, j):
+      if (this.get(i-1, j).color !== picked.color) {
+        return;
+      } if (this.get(i-1, j).color === picked.color) {
+        this.get(i+1,j).ownership = this.playerTurn;
+        return this.neighboorTiles(i-1, j);
+      }
+    break;
+    case this.get(i, j+1):
+      if (this.get(i, j+1).color !== picked.color) {
+        return;
+      } if (this.get(i, j+1).color === picked.color) {
+        this.get(i+1,j).ownership = this.playerTurn;
+        return this.neighboorTiles(i, j+1);
+      }
+    break;
+    case this.get(i, j-1):
+    if (this.get(i, j-1).color !== picked.color) {
+      return;
+    } if (this.get(i, j-1).color === picked.color) {
+      this.get(i+1,j).ownership = this.playerTurn;
+      return this.neighboorTiles(i, j-1);
+    }
+    break;
+  }
+};
 
 /*
+
 
 CoolBloqs.prototype.fillBoard = function() {
   for (var i = 0; i < this.board[0].length; i++)

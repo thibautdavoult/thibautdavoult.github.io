@@ -38,6 +38,7 @@ h2 {
   height: 400px;
   background-color: #4F6D7A;
   text-align: center;
+  border: 2px solid black;
 }
 
 @media (max-width: 600px) {
