@@ -35,17 +35,16 @@ function CoolBloqs (/*width, length*/) {
 // Setting Players' starting tiles
 //****************************************
 
-  this.board[0][0].ownership = 0;
-  this.board[that.boardsize.length - 1][that.boardsize.width - 1].ownership = 1;
+  this.board[0][0].ownership = 0; // player 1 starts on top left
+  this.board[that.boardsize.length - 1][that.boardsize.width - 1].ownership = 1; // player 2 starts on bottom right
 
   //****************************************
-  // Player's color function and starting zones
+  // Setting player's starting colors and zones w/ contamination, and setting player 1's turn
   //****************************************
 
   this.currentColor = [this.board[0][0].color, this.board[that.boardsize.length - 1][that.boardsize.width - 1].color];
 
-
-  this.currentPlayer = [0, 1]; // Turn based 1v1 game. Starts with Player 1 turn, changes from 0 to 1 for Player 2 and back to 0
+  this.currentPlayer = 0; // Turn based 1v1 game. Starts with Player 1 turn (value 0), changes to (value 1) for Player 2 and back to 0, handled in the play() function.
 
 // Auto-contaminate player's starting zones (useful if starting zone is > 1 tile)
 
@@ -56,11 +55,8 @@ function CoolBloqs (/*width, length*/) {
   //****************************************
   // Stuff to deal with later
   //****************************************
-/*
-  this.ended = false; // Checking if game is over
 
-  this.ownTiles = []; // Set of tiles owned by the player
-*/
+  // this.ended = false; // Checking if game is over
 
 } // end of object creator
 
@@ -107,7 +103,7 @@ CoolBloqs.prototype.getNeighboors = function(cell) {
 CoolBloqs.prototype.contaminate = function(cell) {
   var that = this;
   var neighboors = this.getNeighboors(cell);
-  var processingNeighboors = neighboors.filter(function (neighboor) {
+  var processingNeighboors = neighboors.filter(function(neighboor) {
     return  neighboor.ownership !== cell.ownership &&
             neighboor.color === cell.color; });
   processingNeighboors.forEach(function(neighboor) {
@@ -125,12 +121,21 @@ CoolBloqs.prototype.contaminate = function(cell) {
 CoolBloqs.prototype.play = function(color) {
   if (this.currentColor[this.currentPlayer] === color) {
     return;
-  } else {
+  }
+  var that = this;
+  if (this.currentPlayer === 0) {
     this.currentColor[this.currentPlayer] = color;
-    
+    this.board[0][0].color = this.currentColor[this.currentPlayer];
+    that.contaminate(this.board[0][0]);
+    this.currentPlayer = 1;
+  }
+  else if (this.currentPlayer === 1) {
+    this.currentColor[this.currentPlayer] = color;
+    this.board[that.boardsize.length - 1][that.boardsize.width - 1].color = this.currentColor[this.currentPlayer];
+    this.contaminate(this.board[that.boardsize.length - 1][that.boardsize.width - 1]);
+    this.currentPlayer = 0;
   }
 };
-
 // CoolBloqs.prototype.play = function(color) {
 // this.currentColor[this.currentPlayer] = color
 // TO DO :
