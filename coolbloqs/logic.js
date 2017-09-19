@@ -29,33 +29,33 @@ function CoolBloqs (/*width, length*/) {
       return tile;
     });
   });
+    console.log(this.board);
+
 //****************************************
 // Setting Players' starting tiles
 //****************************************
-
-  console.log(this.board);
 
   this.board[0][0].ownership = 0;
   this.board[that.boardsize.length - 1][that.boardsize.width - 1].ownership = 1;
 
   //****************************************
-  // Player1's Zone color function
+  // Player's color function and starting zones
   //****************************************
 
   this.currentColor = [this.board[0][0].color, this.board[that.boardsize.length - 1][that.boardsize.width - 1].color];
 
 
-  this.playerTurn = 0; // Turn based 1v1 game. Starts with Player 1 turn, changes from 0 to 1 for Player 2 and back to 0
+  this.playerTurn = [0, 1]; // Turn based 1v1 game. Starts with Player 1 turn, changes from 0 to 1 for Player 2 and back to 0
 
+  this.player1Zone = this.checkNeighboors(0,
+                                    0,
+                                    this.currentColor[0],
+                                    0);
 
-/* For reference, board looks like this:
-boardRepresentation = [
-[{ownership, color}, idem, idem, idem],
-[idem,               idem, idem, idem],
-[idem,               idem, idem, idem],
-[idem,               idem, idem, idem]
-]
-*/
+  this.player2Zone = this.checkNeighboors(that.boardsize.length - 1,
+                                    that.boardsize.width - 1,
+                                    this.currentColor[1],
+                                    1);
 
 
   //****************************************
@@ -101,14 +101,14 @@ CoolBloqs.prototype.get = function(i,j) {
 // Zone's color function
 //****************************************
 
-CoolBloqs.prototype.neighboorTiles = function(i,j) {
+CoolBloqs.prototype.checkNeighboors = function(i,j, pickedColor, playerTurn) {
   switch (this.get(i,j)) {
     case this.get(i+1, j):
       if (this.get(i+1, j).color !== this.pickedColor) {
         return;
       } if (this.get(i+1, j).color === this.pickedColor) {
         this.get(i+1,j).ownership = this.playerTurn;
-        return this.neighboorTiles(i+1, j);
+        return this.checkNeighboors(i+1, j);
 
       }
     break;
@@ -117,7 +117,7 @@ CoolBloqs.prototype.neighboorTiles = function(i,j) {
         return;
       } if (this.get(i-1, j).color === this.pickedColor) {
         this.get(i+1,j).ownership = this.playerTurn;
-        return this.neighboorTiles(i-1, j);
+        return this.checkNeighboors(i-1, j);
       }
     break;
     case this.get(i, j+1):
@@ -125,7 +125,7 @@ CoolBloqs.prototype.neighboorTiles = function(i,j) {
         return;
       } if (this.get(i, j+1).color === this.pickedColor) {
         this.get(i+1,j).ownership = this.playerTurn;
-        return this.neighboorTiles(i, j+1);
+        return this.checkNeighboors(i, j+1);
       }
     break;
     case this.get(i, j-1):
@@ -133,22 +133,12 @@ CoolBloqs.prototype.neighboorTiles = function(i,j) {
       return;
     } if (this.get(i, j-1).color === this.pickedColor) {
       this.get(i+1,j).ownership = this.playerTurn;
-      return this.neighboorTiles(i, j-1);
+      return this.checkNeighboors(i, j-1);
     }
     break;
   }
 };
 
-/*
 
-
-CoolBloqs.prototype.fillBoard = function() {
-  for (var i = 0; i < this.board[0].length; i++)
-    if (this.board[0][i] === null) {
-      var randTile = randomTileColor();
-      this.board[0].push(randTile);
-    }
-};
-*/
 
 // 3. Handling each player's owned tiles (?)
