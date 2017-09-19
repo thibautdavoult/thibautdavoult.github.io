@@ -3,7 +3,6 @@
 //****************************************
 
 function CoolBloqs (/*width, length*/) {
-   // Board layout (1st iteration is 14x14 tiles, may need a constuctor to let users choose board size)
   this.pickedColor = "red";
   var that = this;
 
@@ -14,6 +13,7 @@ function CoolBloqs (/*width, length*/) {
     length: length
   };
   this.availableColors = ["red", "green", "blue", "purple"]; // Possible tiles colors (1st iteration has 4 fixed colors)
+
 //****************************************
 // Generating a board filled with random tiles
 //****************************************
@@ -80,7 +80,7 @@ CoolBloqs.prototype.randomTileColor = function() {
 // 2. Simplifying method to select a tile
 
 CoolBloqs.prototype.get = function(i,j) {
-  if ( (!this.board[i]) || (!this.board[j]) ) {
+  if ( (!this.board[i]) || (!this.board[i][j]) ) {
     return undefined;
   }
   return this.board[i][j];
@@ -88,8 +88,16 @@ CoolBloqs.prototype.get = function(i,j) {
 
 // 3. Getting neighboors
 
-CoolBloqs.prototype.getNeighboors = function() {
-  // STUFF TO GET NEIGHBOORS
+CoolBloqs.prototype.getNeighboors = function(cell) {
+  var neighboors = [];
+  var upNeighboor = this.get(cell.row-1, cell.col);
+  var rightNeighboor = this.get(cell.row, cell.col+1);
+  var downNeighboor = this.get(cell.row+1, cell.col);
+  var leftNeighboor = this.get(cell.row, cell.col-1);
+  neighboors.push(upNeighboor, rightNeighboor, downNeighboor, leftNeighboor);
+  return neighboors.filter(function(neighboor) {
+    return neighboor !== undefined;
+  });
 };
 
 //****************************************
@@ -99,7 +107,7 @@ CoolBloqs.prototype.getNeighboors = function() {
 CoolBloqs.prototype.contaminate = function(cell) {
   var that = this;
   var neighboors = this.getNeighboors(cell);
-  var processingNeighboors = neigboors.filter(function (neighboor) {
+  var processingNeighboors = neighboors.filter(function (neighboor) {
     return  neighboor.ownership !== cell.ownership &&
             neighboor.color === cell.color; });
   processingNeighboors.forEach(function(neighboor) {
@@ -109,3 +117,13 @@ CoolBloqs.prototype.contaminate = function(cell) {
     that.contaminate(neighboor); }
   );
 };
+
+//****************************************
+// Play function
+//****************************************
+
+// CoolBloqs.prototype.play = function(color) {
+//   this.currentColor[this.currentPlayer] = color;
+// TO DO SEE TRELLO
+//
+// };

@@ -6,8 +6,16 @@
 
   // jquery stuff goes here
 
-  flood = new CoolBloqs();
+  game = new CoolBloqs();
 
+function display() {
+  var board = game.board.map(function(row) {
+    return row.map(function(cell) {
+      return "ownership: " + cell.ownership + "; color: " + cell.color;
+    });
+  });
+  console.table(board);
+}
 
 //});
 
