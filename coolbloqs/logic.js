@@ -102,41 +102,15 @@ CoolBloqs.prototype.get = function(i,j) {
 //****************************************
 
 CoolBloqs.prototype.checkNeighboors = function(i,j, pickedColor, playerTurn) {
-  switch (this.get(i,j)) {
-    case this.get(i+1, j):
-      if (this.get(i+1, j).color !== this.pickedColor) {
-        return;
-      } if (this.get(i+1, j).color === this.pickedColor) {
-        this.get(i+1,j).ownership = this.playerTurn;
-        return this.checkNeighboors(i+1, j);
-
-      }
-    break;
-    case this.get(i-1, j):
-      if (this.get(i-1, j).color !== this.pickedColor) {
-        return;
-      } if (this.get(i-1, j).color === this.pickedColor) {
-        this.get(i+1,j).ownership = this.playerTurn;
-        return this.checkNeighboors(i-1, j);
-      }
-    break;
-    case this.get(i, j+1):
-      if (this.get(i, j+1).color !== this.pickedColor) {
-        return;
-      } if (this.get(i, j+1).color === this.pickedColor) {
-        this.get(i+1,j).ownership = this.playerTurn;
-        return this.checkNeighboors(i, j+1);
-      }
-    break;
-    case this.get(i, j-1):
-    if (this.get(i, j-1).color !== this.pickedColor) {
+  for (var row = i; row < this.boardsize.length; row++) {
+    if ( this.get(row,j).color !== this.pickedColor) {
       return;
-    } if (this.get(i, j-1).color === this.pickedColor) {
-      this.get(i+1,j).ownership = this.playerTurn;
-      return this.checkNeighboors(i, j-1);
+    } if ( this.get(row+1,j).color === this.pickedColor ) {
+      this.get(row+1,j).ownership = this.playerTurn;
     }
-    break;
+    return this.checkNeighboors(i+1, j, pickedColor, playerTurn);
   }
+
 };
 
 
