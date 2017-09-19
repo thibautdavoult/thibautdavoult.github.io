@@ -45,17 +45,12 @@ function CoolBloqs (/*width, length*/) {
   this.currentColor = [this.board[0][0].color, this.board[that.boardsize.length - 1][that.boardsize.width - 1].color];
 
 
-  this.playerTurn = [0, 1]; // Turn based 1v1 game. Starts with Player 1 turn, changes from 0 to 1 for Player 2 and back to 0
+  this.currentPlayer = [0, 1]; // Turn based 1v1 game. Starts with Player 1 turn, changes from 0 to 1 for Player 2 and back to 0
 
-  this.player1Zone = this.checkNeighboors(0,
-                                    0,
-                                    this.currentColor[0],
-                                    0);
+// Auto-contaminate player's starting zones (useful if starting zone is > 1 tile)
 
-  this.player2Zone = this.checkNeighboors(that.boardsize.length - 1,
-                                    that.boardsize.width - 1,
-                                    this.currentColor[1],
-                                    1);
+  this.contaminate(this.board[0][0]); // no need to specify ownership because tile already has the info
+  this.contaminate(this.board[that.boardsize.length - 1][that.boardsize.width - 1]);
 
 
   //****************************************
@@ -91,28 +86,26 @@ CoolBloqs.prototype.get = function(i,j) {
   return this.board[i][j];
 };
 
-// 3. Defining the picked color
+// 3. Getting neighboors
 
-// CoolBloqs.prototype.pickedColor = function() {
-//
-// };
-
-//****************************************
-// Zone's color function
-//****************************************
-
-CoolBloqs.prototype.checkNeighboors = function(i,j, pickedColor, playerTurn) {
-  for (var row = i; row < this.boardsize.length; row++) {
-    if ( this.get(row,j).color !== this.pickedColor) {
-      return;
-    } if ( this.get(row+1,j).color === this.pickedColor ) {
-      this.get(row+1,j).ownership = this.playerTurn;
-    }
-    return this.checkNeighboors(i+1, j, pickedColor, playerTurn);
-  }
-
+CoolBloqs.prototype.getNeighboors = function() {
+  // STUFF TO GET NEIGHBOORS
 };
 
+//****************************************
+// Contaminate function
+//****************************************
 
-
-// 3. Handling each player's owned tiles (?)
+CoolBloqs.prototype.contaminate = function(cell) {
+  var that = this;
+  var neighboors = this.getNeighboors(cell);
+  var processingNeighboors = neigboors.filter(function (neighboor) {
+    return  neighboor.ownership !== cell.ownership &&
+            neighboor.color === cell.color; });
+  processingNeighboors.forEach(function(neighboor) {
+    neighboor.ownership = cell.ownership; }
+  );
+  processingNeighboors.forEach(function(neighboor) {
+    that.contaminate(neighboor); }
+  );
+};
