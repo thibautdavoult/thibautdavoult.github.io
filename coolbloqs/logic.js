@@ -4,7 +4,7 @@
 
 function CoolBloqs (/*width, length*/) {
    // Board layout (1st iteration is 14x14 tiles, may need a constuctor to let users choose board size)
-
+  this.pickedColor = "red";
   var that = this;
 
   var width = 4; // remove when w and l are not fixed anymore
@@ -45,6 +45,8 @@ function CoolBloqs (/*width, length*/) {
   this.currentColor = [this.board[0][0].color, this.board[that.boardsize.length - 1][that.boardsize.width - 1].color];
 
 
+  this.playerTurn = 0; // Turn based 1v1 game. Starts with Player 1 turn, changes from 0 to 1 for Player 2 and back to 0
+
 
 /* For reference, board looks like this:
 boardRepresentation = [
@@ -61,7 +63,7 @@ boardRepresentation = [
   //****************************************
 /*
   this.ended = false; // Checking if game is over
-  this.playerTurn = 0; // Turn based 1v1 game. Starts with Player 1 turn, changes from 0 to 1 for Player 2 and back to 0
+
   this.ownTiles = []; // Set of tiles owned by the player
 */
 
@@ -81,11 +83,18 @@ CoolBloqs.prototype.randomTileColor = function() {
 };
 
 // 2. Simplifying method to select a tile
+
+CoolBloqs.prototype.get = function(i,j) {
+  if ( (!this.board[i]) || (!this.board[j]) ) {
+    return undefined;
+  }
+  return this.board[i][j];
+};
+
+// 3. Defining the picked color
+
+// CoolBloqs.prototype.pickedColor = function() {
 //
-// CoolBloqs.prototype.get(i,j) {
-//   if ((!i) || (!j)) {
-//     return undefined;
-//   } return this.board[i][j];
 // };
 
 //****************************************
@@ -95,34 +104,34 @@ CoolBloqs.prototype.randomTileColor = function() {
 CoolBloqs.prototype.neighboorTiles = function(i,j) {
   switch (this.get(i,j)) {
     case this.get(i+1, j):
-      if (this.get(i+1, j).color !== picked.color) {
+      if (this.get(i+1, j).color !== this.pickedColor) {
         return;
-      } if (this.get(i+1, j).color === picked.color) {
+      } if (this.get(i+1, j).color === this.pickedColor) {
         this.get(i+1,j).ownership = this.playerTurn;
         return this.neighboorTiles(i+1, j);
 
       }
     break;
     case this.get(i-1, j):
-      if (this.get(i-1, j).color !== picked.color) {
+      if (this.get(i-1, j).color !== this.pickedColor) {
         return;
-      } if (this.get(i-1, j).color === picked.color) {
+      } if (this.get(i-1, j).color === this.pickedColor) {
         this.get(i+1,j).ownership = this.playerTurn;
         return this.neighboorTiles(i-1, j);
       }
     break;
     case this.get(i, j+1):
-      if (this.get(i, j+1).color !== picked.color) {
+      if (this.get(i, j+1).color !== this.pickedColor) {
         return;
-      } if (this.get(i, j+1).color === picked.color) {
+      } if (this.get(i, j+1).color === this.pickedColor) {
         this.get(i+1,j).ownership = this.playerTurn;
         return this.neighboorTiles(i, j+1);
       }
     break;
     case this.get(i, j-1):
-    if (this.get(i, j-1).color !== picked.color) {
+    if (this.get(i, j-1).color !== this.pickedColor) {
       return;
-    } if (this.get(i, j-1).color === picked.color) {
+    } if (this.get(i, j-1).color === this.pickedColor) {
       this.get(i+1,j).ownership = this.playerTurn;
       return this.neighboorTiles(i, j-1);
     }
