@@ -122,8 +122,20 @@ CoolBloqs.prototype.contaminate = function(cell) {
 // Play function
 //****************************************
 
+CoolBloqs.prototype.play = function(color) {
+  if (this.currentColor[this.currentPlayer] === color) {
+    return;
+  } else {
+    this.currentColor[this.currentPlayer] = color;
+    
+  }
+};
+
 // CoolBloqs.prototype.play = function(color) {
-//   this.currentColor[this.currentPlayer] = color;
-// TO DO SEE TRELLO
-//
-// };
+// this.currentColor[this.currentPlayer] = color
+// TO DO :
+// 1. CONVERTIR CELLS DU JOUEUR EN COLOR
+// 2. Recupérer les voisins de couleur color qui ne m'appartient pas
+// -> EXAMPLE: ARR [(2,0), (0,2), (0,2)]
+// 3. Switch ownership -- DONE
+// }
