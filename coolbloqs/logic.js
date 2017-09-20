@@ -123,18 +123,20 @@ CoolBloqs.prototype.play = function(color) {
     return;
   }
   var that = this;
+  var playerOwnedTiles = this.board.filter(function(cell) {
+    return this.cell.ownership === this.currentPlayer;}
+  );
+  playerOwnedTiles.forEach(function(cell) {
+    playerOwnedTiles.color = this.currentColor[this.currentPlayer];}
+  );
+
+  playerOwnedTiles.forEach(function(cell) {
+    that.contaminate(cell); }
+  );
   if (this.currentPlayer === 0) {
-    this.currentColor[this.currentPlayer] = color;
-    this.board[0][0].color = this.currentColor[this.currentPlayer];
-    that.contaminate(this.board[0][0]);
     this.currentPlayer = 1;
   }
-  else if (this.currentPlayer === 1) {
-    this.currentColor[this.currentPlayer] = color;
-    this.board[that.boardsize.length - 1][that.boardsize.width - 1].color = this.currentColor[this.currentPlayer];
-    this.contaminate(this.board[that.boardsize.length - 1][that.boardsize.width - 1]);
-    this.currentPlayer = 0;
-  }
+    else this.currentPlayer = 0;
 };
 // CoolBloqs.prototype.play = function(color) {
 // this.currentColor[this.currentPlayer] = color
@@ -143,4 +145,7 @@ CoolBloqs.prototype.play = function(color) {
 // 2. Recupérer les voisins de couleur color qui ne m'appartient pas
 // -> EXAMPLE: ARR [(2,0), (0,2), (0,2)]
 // 3. Switch ownership -- DONE
+
+// !!!! FILTER with Ownership and contaminate from all owned cells
+/// -> filter foreach
 // }

@@ -15,8 +15,17 @@ function display() {
     });
   });
   console.table(board);
+/*
+  var visualBoard = $(".board");
+
+  for (row = 0; row < game.boardsize.length; row++) {
+    for (col = 0; col < game.boardsize.width; col++) {
+      var rowCell = row * cellSize;
+      var colCell = col * cellSize;
+      visualBoard.html("<div class='cell' style='top:" + rowcell + "px';'left:" + colCell + "px'></div>");
+    }
+  }
+*/
 }
 
-//});
-
-// some other stuff goes here
+// });

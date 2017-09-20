@@ -38,6 +38,24 @@ h2 {
   height: 400px;
   background-color: #4F6D7A;
   text-align: center;
+  /*border: 2px solid black;*/
+  position: relative;
+}
+
+.tile {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #FFF;
+  border: 2px solid black;
+}
+
+.tile-2 {
+  left: 100px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #FFF;
   border: 2px solid black;
 }
 
