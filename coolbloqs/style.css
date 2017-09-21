@@ -1,15 +1,14 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-  font-family: 'Reem Kufi', sans-serif;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Reem Kufi", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
-
 .title {
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: "Reem Kufi", sans-serif;
 }
 
 h1 {
@@ -22,8 +21,8 @@ h1 {
 }
 
 h2 {
-  font-family: 'Open Sans';
-  margin: 0 0 26px 0;
+  font-family: "Open Sans";
+  margin: 26px 0 26px 0;
 }
 
 .container {
@@ -36,7 +35,7 @@ h2 {
 .board {
   width: 600px;
   height: 600px;
-  background-color: #4F6D7A;
+  background-color: #4f6d7a;
   text-align: center;
   position: relative;
 }
@@ -60,12 +59,17 @@ h2 {
   margin: 0px 10px 0 20px;
 }
 
+.game-end {
+  position: relative;
+  background-color: rgba(3, 3, 3, 0.2);
+  z-index: 1;
+}
+
 @media (max-width: 600px) {
   h2 {
     font-size: 1.3em;
   }
 }
-
 
 /*
 

@@ -29,7 +29,6 @@ function CoolBloqs(/*width, length*/) {
       return tile;
     });
   });
-  console.log(this.board);
 
   //****************************************
   // Setting Players' starting tiles
@@ -159,9 +158,7 @@ CoolBloqs.prototype.play = function(color) {
 CoolBloqs.prototype.checkEnd = function() {
   if (this.get(0, 0).ownership === 1) {
     return "Player 2 wins";
-  } else if (
-    this.get(this.boardsize.length - 1, this.boardsize.width - 1) === 0
-  ) {
+  } else if (this.get(this.boardsize.length - 1, this.boardsize.width - 1) === 0) {
     return "Player 1 wins";
   } else return;
 };

@@ -37,6 +37,7 @@ $(document).ready(function() {
   function render() {
     playerTurnUpdate();
     boardUpdate();
+    gameEndUpdate();
   }
 
   function playerTurnUpdate() {
@@ -49,21 +50,30 @@ $(document).ready(function() {
       }
     });
   }
+
+  function gameEndUpdate() {
+    if (game.checkEnd() === "Player 2 wins") {
+      $(".playerturn").text("Player 2 WINNNNNNSSSS");
+    }
+    if (game.checkEnd() === "Player 1 wins") {
+      $(".playerturn").text("Player 1 WINNNNNNSSS");
+    }
+  }
   //****************************************
   // 2. Player's action assigned to a key
   //****************************************
 
   $(document).keyup(function(k) {
-    if (k.keyCode === 38) {
+    if (k.keyCode === 38 || k.keyCode === 69) {
       game.play(game.availableColors[0]);
     }
-    if (k.keyCode == 39) {
+    if (k.keyCode == 39  || k.keyCode === 70 ) {
       game.play(game.availableColors[1]);
     }
-    if (k.keyCode == 40) {
+    if (k.keyCode == 40  || k.keyCode === 68) {
       game.play(game.availableColors[2]);
     }
-    if (k.keyCode == 37) {
+    if (k.keyCode == 37  || k.keyCode === 83) {
       game.play(game.availableColors[3]);
     }
     render();
