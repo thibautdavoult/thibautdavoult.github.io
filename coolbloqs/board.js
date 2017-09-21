@@ -40,7 +40,6 @@ boardUpdate = function() {
 };
 
 boardUpdate();
-display();
 
 //****************************************
 // 2. Player's action assigned to a key
@@ -57,11 +56,6 @@ $(document).keyup(function(k) {
     game.play(game.availableColors[3]);
   }
     boardUpdate();
-    display();
 });
-
-  //****************************************
-  // 1. Board update on players' actions
-  //****************************************
 
 });

@@ -143,19 +143,20 @@ CoolBloqs.prototype.play = function(color) {
     that.contaminate(cell);
   });
 
+  that.checkEnd();
+
   if (this.currentPlayer === 0) {
     this.currentPlayer = 1;
   }
     else this.currentPlayer = 0;
 };
-// CoolBloqs.prototype.play = function(color) {
-// this.currentColor[this.currentPlayer] = color
-// TO DO :
-// 1. CONVERTIR CELLS DU JOUEUR EN COLOR
-// 2. Recupérer les voisins de couleur color qui ne m'appartient pas
-// -> EXAMPLE: ARR [(2,0), (0,2), (0,2)]
-// 3. Switch ownership -- DONE
 
-// !!!! FILTER with Ownership and contaminate from all owned cells
-/// -> filter foreach
-// }
+
+CoolBloqs.prototype.checkEnd = function() {
+  if (this.get(0,0).ownership === 1 ) {
+    return "Player 2 wins";
+} else if (this.get((this.boardsize.length - 1), (this.boardsize.width - 1)) === 0) {
+  return "Player 1 wins";
+} else
+return;
+};
