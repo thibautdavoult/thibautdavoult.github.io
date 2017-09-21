@@ -5,8 +5,8 @@
 function CoolBloqs (/*width, length*/) {
   var that = this;
 
-  var width = 8; // remove when w and l are not fixed anymore
-  var length = 8;
+  var width = 12; // remove when w and l are not fixed anymore
+  var length = 12;
   this.boardsize = {
     width: width,
     length: length

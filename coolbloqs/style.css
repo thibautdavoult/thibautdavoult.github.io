@@ -34,8 +34,8 @@ h2 {
 }
 
 .board {
-  width: 400px;
-  height: 400px;
+  width: 600px;
+  height: 600px;
   background-color: #4F6D7A;
   text-align: center;
   position: relative;
