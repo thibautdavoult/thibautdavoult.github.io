@@ -15,7 +15,7 @@ function display() {
     });
   });
   console.table(board);
-/*
+
   var visualBoard = $(".board");
 
   for (row = 0; row < game.boardsize.length; row++) {
@@ -25,7 +25,7 @@ function display() {
       visualBoard.html("<div class='cell' style='top:" + rowcell + "px';'left:" + colCell + "px'></div>");
     }
   }
-*/
+
 }
 
 // });

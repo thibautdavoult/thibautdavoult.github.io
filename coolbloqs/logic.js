@@ -122,17 +122,27 @@ CoolBloqs.prototype.play = function(color) {
   if (this.currentColor[this.currentPlayer] === color) {
     return;
   }
+
+  this.currentColor[this.currentPlayer] = color;
+
   var that = this;
-  var playerOwnedTiles = this.board.filter(function(cell) {
-    return this.cell.ownership === this.currentPlayer;}
-  );
-  playerOwnedTiles.forEach(function(cell) {
-    playerOwnedTiles.color = this.currentColor[this.currentPlayer];}
-  );
+
+  var playerOwnedTiles = that.board.map(function(row) {
+      return row.filter(function(cell) {
+        return cell.ownership === that.currentPlayer;
+      });
+      }).reduce(function(a,b) {
+          return a.concat(b);
+        }, []);
 
   playerOwnedTiles.forEach(function(cell) {
-    that.contaminate(cell); }
-  );
+    cell.color = that.currentColor[that.currentPlayer];
+  });
+
+  playerOwnedTiles.forEach(function(cell) {
+    that.contaminate(cell);
+  });
+
   if (this.currentPlayer === 0) {
     this.currentPlayer = 1;
   }
