@@ -2,15 +2,14 @@
 // Game UI and Behavior on Screen goes here
 //****************************************
 
-// $(document).ready(function () {
+//
 
   // jquery stuff goes here
+$(document).ready(function () {
 
   game = new CoolBloqs();
 
-
-
-function display() {
+// display as table on console
   var board = game.board.map(function(row) {
     return row.map(function(cell) {
       return "ownership: " + cell.ownership + "; color: " + cell.color;
@@ -18,6 +17,9 @@ function display() {
   });
   console.table(board);
 
+  // display on actual page
+
+  var that = this;
   var visualBoard = $(".board");
 
   for (row = 0; row < game.boardsize.length; row++) {
@@ -25,11 +27,9 @@ function display() {
       var cellSize = 100;
       var rowCell = row * cellSize;
       var colCell = col * cellSize;
-      visualBoard.append("<div class='tile' style='top:" + rowCell + "px;left:" + colCell + "px'></div>");
+      visualBoard.append("<div class='tile' style='top:" + rowCell + "px;left:" + colCell + "px;background-color:" + board.color + "';></div>");
     }
   }
 
-}
-
-// });
+});
  // ;color:" + color +
