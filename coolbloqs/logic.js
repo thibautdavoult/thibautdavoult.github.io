@@ -5,13 +5,13 @@
 function CoolBloqs (/*width, length*/) {
   var that = this;
 
-  var width = 4; // remove when w and l are not fixed anymore
-  var length = 4;
+  var width = 8; // remove when w and l are not fixed anymore
+  var length = 8;
   this.boardsize = {
     width: width,
     length: length
   };
-  this.availableColors = ["red", "green", "blue", "purple"]; // Possible tiles colors (1st iteration has 4 fixed colors)
+  this.availableColors = ["#084C61", "#56A3A6", "#F7B801", "#DB504A"]; // Possible tiles colors (1st iteration has 4 fixed colors)
 
 //****************************************
 // Generating a board filled with random tiles
@@ -135,6 +135,7 @@ CoolBloqs.prototype.play = function(color) {
         }, []);
 
   playerOwnedTiles.forEach(function(cell) {
+
     cell.color = that.currentColor[that.currentPlayer];
   });
 

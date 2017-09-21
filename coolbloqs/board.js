@@ -9,6 +9,8 @@
 $(document).ready(function () {
 
   game = new CoolBloqs();
+  var visualBoard = $(".board");
+
 
 // function to display board in console
 
@@ -21,28 +23,45 @@ display = function() {
   console.table(board);
 };
 
-
   // Display on actual site page
 
+boardUpdate = function() {
+
   var that = this;
-  var visualBoard = $(".board");
 
   for (row = 0; row < game.boardsize.length; row++) {
     for (col = 0; col < game.boardsize.width; col++) {
-      var cellSize = 100;
+      var cellSize = 50;
       var rowCell = row * cellSize;
       var colCell = col * cellSize;
-      visualBoard.append("<div class='tile' style='top:" + rowCell + "px;left:" + colCell + "px;background-color:" + game.board[row][col].color + "'></div>");
+      visualBoard.append("<div class='tile' style='top:" + rowCell + "px;left:" + colCell + "px;background-color:" + game.get(row, col).color + "'></div>");
     }
   }
+};
+
+boardUpdate();
+display();
+
+//****************************************
+// 2. Player's action assigned to a key
+//****************************************
+
+$(document).keyup(function(k) {
+  if (k.keyCode === 38) {
+    game.play(game.availableColors[0]);
+  } if (k.keyCode == 39) {
+    game.play(game.availableColors[1]);
+  } if (k.keyCode == 40) {
+    game.play(game.availableColors[2]);
+  } if (k.keyCode == 37) {
+    game.play(game.availableColors[3]);
+  }
+    boardUpdate();
+    display();
+});
 
   //****************************************
   // 1. Board update on players' actions
   //****************************************
-
-  // Need to select the tiles, need to apply transformation to it
-
-  // $(all tiles).
-
 
 });
