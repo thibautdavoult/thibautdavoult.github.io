@@ -3,7 +3,6 @@
 //****************************************
 
 function CoolBloqs (/*width, length*/) {
-  this.pickedColor = "red";
   var that = this;
 
   var width = 4; // remove when w and l are not fixed anymore

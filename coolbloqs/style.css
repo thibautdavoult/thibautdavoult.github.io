@@ -50,15 +50,6 @@ h2 {
   border: 2px solid black;
 }
 
-.tile-2 {
-  left: 100px;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: #FFF;
-  border: 2px solid black;
-}
-
 @media (max-width: 600px) {
   h2 {
     font-size: 1.3em;
