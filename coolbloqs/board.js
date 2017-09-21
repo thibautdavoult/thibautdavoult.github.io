@@ -27,7 +27,7 @@ $(document).ready(function () {
       var cellSize = 100;
       var rowCell = row * cellSize;
       var colCell = col * cellSize;
-      visualBoard.append("<div class='tile' style='top:" + rowCell + "px;left:" + colCell + "px;background-color:" + board.color + "';></div>");
+      visualBoard.append("<div class='tile' style='top:" + rowCell + "px;left:" + colCell + "px;background-color:" + game.board[row][col].color + "'></div>");
     }
   }
 
