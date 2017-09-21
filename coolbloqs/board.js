@@ -2,9 +2,10 @@
 // Game UI and Behavior on Screen goes here
 //****************************************
 
-//
+//****************************************
+// 1. Default state on page load
+//****************************************
 
-  // jquery stuff goes here
 $(document).ready(function () {
 
   game = new CoolBloqs();
@@ -21,7 +22,7 @@ display = function() {
 };
 
 
-  // display on actual page
+  // Display on actual site page
 
   var that = this;
   var visualBoard = $(".board");
@@ -34,5 +35,14 @@ display = function() {
       visualBoard.append("<div class='tile' style='top:" + rowCell + "px;left:" + colCell + "px;background-color:" + game.board[row][col].color + "'></div>");
     }
   }
+
+  //****************************************
+  // 1. Board update on players' actions
+  //****************************************
+
+  // Need to select the tiles, need to apply transformation to it
+
+  // $(all tiles).
+
 
 });
