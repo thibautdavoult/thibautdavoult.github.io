@@ -6,56 +6,66 @@
 // 1. Default state on page load
 //****************************************
 
-$(document).ready(function () {
-
+$(document).ready(function() {
   game = new CoolBloqs();
   var visualBoard = $(".board");
-
-
-// function to display board in console
-
-display = function() {
-  var board = game.board.map(function(row) {
-    return row.map(function(cell) {
-      return "ownership: " + cell.ownership + "; color: " + cell.color;
-    });
-  });
-  console.table(board);
-};
+  render();
 
   // Display on actual site page
 
-boardUpdate = function() {
+  function boardUpdate() {
+    var that = this;
 
-  var that = this;
-
-  for (row = 0; row < game.boardsize.length; row++) {
-    for (col = 0; col < game.boardsize.width; col++) {
-      var cellSize = 50;
-      var rowCell = row * cellSize;
-      var colCell = col * cellSize;
-      visualBoard.append("<div class='tile' style='top:" + rowCell + "px;left:" + colCell + "px;background-color:" + game.get(row, col).color + "'></div>");
+    for (row = 0; row < game.boardsize.length; row++) {
+      for (col = 0; col < game.boardsize.width; col++) {
+        var cellSize = 50;
+        var rowCell = row * cellSize;
+        var colCell = col * cellSize;
+        visualBoard.append(
+          "<div class='tile' style='top:" +
+            rowCell +
+            "px;left:" +
+            colCell +
+            "px;background-color:" +
+            game.get(row, col).color +
+            "'></div>"
+        );
+      }
     }
   }
-};
 
-boardUpdate();
-
-//****************************************
-// 2. Player's action assigned to a key
-//****************************************
-
-$(document).keyup(function(k) {
-  if (k.keyCode === 38) {
-    game.play(game.availableColors[0]);
-  } if (k.keyCode == 39) {
-    game.play(game.availableColors[1]);
-  } if (k.keyCode == 40) {
-    game.play(game.availableColors[2]);
-  } if (k.keyCode == 37) {
-    game.play(game.availableColors[3]);
-  }
+  function render() {
+    playerTurnUpdate();
     boardUpdate();
-});
+  }
 
+  function playerTurnUpdate() {
+    $(".playerturn").text(function() {
+      if (game.currentPlayer === 0) {
+        return "Player 1's turn";
+      }
+      if (game.currentPlayer === 1) {
+        return "Player 2's turn";
+      }
+    });
+  }
+  //****************************************
+  // 2. Player's action assigned to a key
+  //****************************************
+
+  $(document).keyup(function(k) {
+    if (k.keyCode === 38) {
+      game.play(game.availableColors[0]);
+    }
+    if (k.keyCode == 39) {
+      game.play(game.availableColors[1]);
+    }
+    if (k.keyCode == 40) {
+      game.play(game.availableColors[2]);
+    }
+    if (k.keyCode == 37) {
+      game.play(game.availableColors[3]);
+    }
+    render();
+  });
 });

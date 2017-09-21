@@ -2,7 +2,7 @@
 // Definig the board object constructor
 //****************************************
 
-function CoolBloqs (/*width, length*/) {
+function CoolBloqs(/*width, length*/) {
   var that = this;
 
   var width = 12; // remove when w and l are not fixed anymore
@@ -13,12 +13,13 @@ function CoolBloqs (/*width, length*/) {
   };
   this.availableColors = ["#084C61", "#56A3A6", "#F7B801", "#DB504A"]; // Possible tiles colors (1st iteration has 4 fixed colors)
 
-//****************************************
-// Generating a board filled with random tiles
-//****************************************
+  //****************************************
+  // Generating a board filled with random tiles
+  //****************************************
 
-  this.board = new Array(that.boardsize.length).fill(null).map(function (_, i) { // _ is for element that is not specified (here null)
-    return new Array(that.boardsize.width).fill(null).map(function (_, j) {
+  this.board = new Array(that.boardsize.length).fill(null).map(function(_, i) {
+    // _ is for element that is not specified (here null)
+    return new Array(that.boardsize.width).fill(null).map(function(_, j) {
       var tile = {
         ownership: null,
         color: that.randomTileColor(),
@@ -28,11 +29,11 @@ function CoolBloqs (/*width, length*/) {
       return tile;
     });
   });
-    console.log(this.board);
+  console.log(this.board);
 
-//****************************************
-// Setting Players' starting tiles
-//****************************************
+  //****************************************
+  // Setting Players' starting tiles
+  //****************************************
 
   this.board[0][0].ownership = 0; // player 1 starts on top left
   this.board[that.boardsize.length - 1][that.boardsize.width - 1].ownership = 1; // player 2 starts on bottom right
@@ -41,24 +42,26 @@ function CoolBloqs (/*width, length*/) {
   // Setting player's starting colors and zones w/ contamination, and setting player 1's turn
   //****************************************
 
-  this.currentColor = [this.board[0][0].color, this.board[that.boardsize.length - 1][that.boardsize.width - 1].color];
+  this.currentColor = [
+    this.board[0][0].color,
+    this.board[that.boardsize.length - 1][that.boardsize.width - 1].color
+  ];
 
   this.currentPlayer = 0; // Turn based 1v1 game. Starts with Player 1 turn (value 0), changes to (value 1) for Player 2 and back to 0, handled in the play() function.
 
-// Auto-contaminate player's starting zones (useful if starting zone is > 1 tile)
+  // Auto-contaminate player's starting zones (useful if starting zone is > 1 tile)
 
   this.contaminate(this.board[0][0]); // no need to specify ownership because tile already has the info
-  this.contaminate(this.board[that.boardsize.length - 1][that.boardsize.width - 1]);
-
+  this.contaminate(
+    this.board[that.boardsize.length - 1][that.boardsize.width - 1]
+  );
 
   //****************************************
   // Stuff to deal with later
   //****************************************
 
   // this.ended = false; // Checking if game is over
-
 } // end of object creator
-
 
 //****************************************
 // Game Logic and Funtions go here
@@ -74,8 +77,8 @@ CoolBloqs.prototype.randomTileColor = function() {
 
 // 2. Simplifying method to select a tile
 
-CoolBloqs.prototype.get = function(i,j) {
-  if ( (!this.board[i]) || (!this.board[i][j]) ) {
+CoolBloqs.prototype.get = function(i, j) {
+  if (!this.board[i] || !this.board[i][j]) {
     return undefined;
   }
   return this.board[i][j];
@@ -85,10 +88,10 @@ CoolBloqs.prototype.get = function(i,j) {
 
 CoolBloqs.prototype.getNeighboors = function(cell) {
   var neighboors = [];
-  var upNeighboor = this.get(cell.row-1, cell.col);
-  var rightNeighboor = this.get(cell.row, cell.col+1);
-  var downNeighboor = this.get(cell.row+1, cell.col);
-  var leftNeighboor = this.get(cell.row, cell.col-1);
+  var upNeighboor = this.get(cell.row - 1, cell.col);
+  var rightNeighboor = this.get(cell.row, cell.col + 1);
+  var downNeighboor = this.get(cell.row + 1, cell.col);
+  var leftNeighboor = this.get(cell.row, cell.col - 1);
   neighboors.push(upNeighboor, rightNeighboor, downNeighboor, leftNeighboor);
   return neighboors.filter(function(neighboor) {
     return neighboor !== undefined;
@@ -103,14 +106,16 @@ CoolBloqs.prototype.contaminate = function(cell) {
   var that = this;
   var neighboors = this.getNeighboors(cell);
   var processingNeighboors = neighboors.filter(function(neighboor) {
-    return  neighboor.ownership !== cell.ownership &&
-            neighboor.color === cell.color; });
+    return (
+      neighboor.ownership !== cell.ownership && neighboor.color === cell.color
+    );
+  });
   processingNeighboors.forEach(function(neighboor) {
-    neighboor.ownership = cell.ownership; }
-  );
+    neighboor.ownership = cell.ownership;
+  });
   processingNeighboors.forEach(function(neighboor) {
-    that.contaminate(neighboor); }
-  );
+    that.contaminate(neighboor);
+  });
 };
 
 //****************************************
@@ -126,16 +131,17 @@ CoolBloqs.prototype.play = function(color) {
 
   var that = this;
 
-  var playerOwnedTiles = that.board.map(function(row) {
+  var playerOwnedTiles = that.board
+    .map(function(row) {
       return row.filter(function(cell) {
         return cell.ownership === that.currentPlayer;
       });
-      }).reduce(function(a,b) {
-          return a.concat(b);
-        }, []);
+    })
+    .reduce(function(a, b) {
+      return a.concat(b);
+    }, []);
 
   playerOwnedTiles.forEach(function(cell) {
-
     cell.color = that.currentColor[that.currentPlayer];
   });
 
@@ -147,16 +153,15 @@ CoolBloqs.prototype.play = function(color) {
 
   if (this.currentPlayer === 0) {
     this.currentPlayer = 1;
-  }
-    else this.currentPlayer = 0;
+  } else this.currentPlayer = 0;
 };
 
-
 CoolBloqs.prototype.checkEnd = function() {
-  if (this.get(0,0).ownership === 1 ) {
+  if (this.get(0, 0).ownership === 1) {
     return "Player 2 wins";
-} else if (this.get((this.boardsize.length - 1), (this.boardsize.width - 1)) === 0) {
-  return "Player 1 wins";
-} else
-return;
+  } else if (
+    this.get(this.boardsize.length - 1, this.boardsize.width - 1) === 0
+  ) {
+    return "Player 1 wins";
+  } else return;
 };
