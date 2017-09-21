@@ -9,13 +9,17 @@ $(document).ready(function () {
 
   game = new CoolBloqs();
 
-// display as table on console
+// function to display board in console
+
+display = function() {
   var board = game.board.map(function(row) {
     return row.map(function(cell) {
       return "ownership: " + cell.ownership + "; color: " + cell.color;
     });
   });
   console.table(board);
+};
+
 
   // display on actual page
 
@@ -32,4 +36,3 @@ $(document).ready(function () {
   }
 
 });
- // ;color:" + color +
