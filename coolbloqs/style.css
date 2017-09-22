@@ -22,7 +22,7 @@ h1 {
 
 h2 {
   font-family: "Open Sans";
-  margin: 26px 0 26px 0;
+  margin: 26px 0;
 }
 
 .container {
@@ -33,36 +33,51 @@ h2 {
 }
 
 .board {
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background-color: #4f6d7a;
   text-align: center;
   position: relative;
 }
 
-.instructions {
+.margin-left {
+  margin: 0 0 0 30px;
+}
+
+.instructions-objective {
+  margin: 20px 0 0 0;
+  display: flex;
+}
+
+.instructions-keys {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 30px 0 0 0;
+  margin: 14px 0 0 0;
 }
 
 .tile {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
 }
 
 .color-key {
   width: 22px;
   height: 22px;
-  margin: 0px 10px 0 20px;
+  margin: 0px 10px 0 10px;
 }
 
 .game-end {
   position: relative;
   background-color: rgba(3, 3, 3, 0.2);
   z-index: 1;
+}
+
+.keyshape {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1px 10px;
 }
 
 @media (max-width: 600px) {

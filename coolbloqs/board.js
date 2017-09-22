@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     for (row = 0; row < game.boardsize.length; row++) {
       for (col = 0; col < game.boardsize.width; col++) {
-        var cellSize = 50;
+        var cellSize = 25;
         var rowCell = row * cellSize;
         var colCell = col * cellSize;
         visualBoard.append(
@@ -45,18 +45,18 @@ $(document).ready(function() {
       if (game.currentPlayer === 0) {
         return "Player 1's turn";
       }
-      if (game.currentPlayer === 1) {
+      else if (game.currentPlayer === 1) {
         return "Player 2's turn";
       }
     });
   }
 
   function gameEndUpdate() {
-    if (game.checkEnd() === "Player 2 wins") {
-      $(".playerturn").text("Player 2 WINNNNNNSSSS");
+    if (game.victory === 1) {
+      $(".playerturn").text("Player 2 WINS");
     }
-    if (game.checkEnd() === "Player 1 wins") {
-      $(".playerturn").text("Player 1 WINNNNNNSSS");
+    else if (game.victory === 0) {
+      $(".playerturn").text("Player 1 WINS");
     }
   }
   //****************************************
