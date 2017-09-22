@@ -68,12 +68,6 @@ h2 {
   margin: 0px 10px 0 10px;
 }
 
-.game-end {
-  position: relative;
-  background-color: rgba(3, 3, 3, 0.2);
-  z-index: 1;
-}
-
 .keyshape {
   border: 1px solid black;
   border-radius: 5px;
