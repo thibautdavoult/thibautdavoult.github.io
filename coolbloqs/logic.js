@@ -54,9 +54,7 @@ function CoolBloqs(/*width, length*/) {
   // Auto-contaminate player's starting zones (useful if starting zone is > 1 tile)
 
   this.contaminate(this.board[0][0]); // no need to specify ownership because tile already has the info
-  this.contaminate(
-    this.board[that.boardsize.length - 1][that.boardsize.width - 1]
-  );
+  this.contaminate(this.board[that.boardsize.length - 1][that.boardsize.width - 1]);
 
   //****************************************
   // Stuff to deal with later
