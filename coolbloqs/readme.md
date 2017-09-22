@@ -5,7 +5,7 @@ http://thibautdavoult.com/coolbloqs
 
 ## Rules
 
-Inspired by [Flood It](http://unixpapa.com/floodit/)
+Inspired by [Flood It](http://unixpapa.com/floodit/).
 
 The game starts as a grid filled with tiles of different colors (randomized, up to 4 colors max).
 
