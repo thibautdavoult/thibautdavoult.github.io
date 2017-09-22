@@ -45,8 +45,12 @@ h2 {
 }
 
 .instructions-objective {
-  margin: 20px 0 0 0;
+  margin: 10px 0 0 0;
   display: flex;
+}
+
+.s-margin {
+  margin: 10px 0px 5px;
 }
 
 .instructions-keys {
