@@ -31,8 +31,8 @@ Game keeps going until :
 
 ## Nice to have features (importance from + to ++)
 
-- UI stuff to improve understanding of the rules, especially on first visit
+- UI stuff to improve understanding of the rules, especially on first visit (++)
 - Changing size of the board (++)
-- Colorblind mode (++)
+- Colorblind mode (+)
 - Changing color scheme of tiles (+)
 - Nightmode (+)
