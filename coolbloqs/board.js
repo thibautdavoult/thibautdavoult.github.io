@@ -64,7 +64,7 @@ $(document).ready(function() {
     }
   }
 
-  $("button.btn-restart").hide();
+  $("button.btn-restart").hide(); // switch to hide to hide
 
 
 
