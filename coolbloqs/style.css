@@ -32,6 +32,11 @@ h2 {
   align-items: center;
 }
 
+.container-titlepart {
+  display: flex;
+  flex-direction: row;
+}
+
 .board {
   width: 500px;
   height: 500px;

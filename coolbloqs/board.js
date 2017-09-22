@@ -37,7 +37,9 @@ $(document).ready(function() {
   function render() {
     playerTurnUpdate();
     boardUpdate();
+    if (game.victory !== null) {
     gameEndUpdate();
+    }
   }
 
   function playerTurnUpdate() {
@@ -52,30 +54,57 @@ $(document).ready(function() {
   }
 
   function gameEndUpdate() {
+    $("button.btn-restart").show();
+    console.log("gameEndUpdate called");
     if (game.victory === 1) {
-      $(".playerturn").text("Player 2 WINS");
+      $(".playerturn").html("PLAYER 2 WINS");
     }
     else if (game.victory === 0) {
-      $(".playerturn").text("Player 1 WINS");
+      $(".playerturn").html("PLAYER 1 WINS");
     }
   }
+
+  $("button.btn-restart").hide();
+
+
+
+  $("button.btn-restart").click(function() {
+    console.log("page should reload");
+     window.location.reload();
+
+  });
   //****************************************
   // 2. Player's action assigned to a key
   //****************************************
 
   $(document).keyup(function(k) {
-    if (k.keyCode === 38 || k.keyCode === 69) {
+    if (game.currentPlayer === 0) {
+    if (k.keyCode === 38) {
       game.play(game.availableColors[0]);
     }
-    if (k.keyCode == 39  || k.keyCode === 70 ) {
+    if (k.keyCode == 39 ) {
       game.play(game.availableColors[1]);
     }
-    if (k.keyCode == 40  || k.keyCode === 68) {
+    if (k.keyCode == 40) {
       game.play(game.availableColors[2]);
     }
-    if (k.keyCode == 37  || k.keyCode === 83) {
+    if (k.keyCode == 37) {
       game.play(game.availableColors[3]);
     }
+  } else {
+    if (k.keyCode === 69) {
+      game.play(game.availableColors[0]);
+    }
+    if (k.keyCode === 70) {
+      game.play(game.availableColors[1]);
+    }
+    if (k.keyCode === 68) {
+      game.play(game.availableColors[2]);
+    }
+    if (k.keyCode === 83){
+      game.play(game.availableColors[3]);
+    }
+  }
     render();
   });
 });

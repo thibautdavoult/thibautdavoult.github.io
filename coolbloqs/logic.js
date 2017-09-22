@@ -49,7 +49,7 @@ function CoolBloqs(/*width, length*/) {
 
   this.currentPlayer = 0; // Turn based 1v1 game. Starts with Player 1 turn (value 0), changes to (value 1) for Player 2 and back to 0, handled in the play() function.
 
-  this.victory = "";
+  this.victory = null;
 
   // Auto-contaminate player's starting zones (useful if starting zone is > 1 tile)
 
@@ -159,9 +159,7 @@ CoolBloqs.prototype.play = function(color) {
 CoolBloqs.prototype.checkEnd = function() {
   if (this.get(0, 0).ownership === 1) {
     this.victory = 1;
-    return "Player 2 wins";
   } else if (this.get(this.boardsize.length - 1, this.boardsize.width - 1).ownership === 0) {
     this.victory = 0;
-    return "Player 1 wins";
-  } else return;
+  } else this.victory = null;
 };
