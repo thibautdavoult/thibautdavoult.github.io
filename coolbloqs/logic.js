@@ -56,11 +56,6 @@ function CoolBloqs(/*width, length*/) {
   this.contaminate(this.board[0][0]); // no need to specify ownership because tile already has the info
   this.contaminate(this.board[that.boardsize.length - 1][that.boardsize.width - 1]);
 
-  //****************************************
-  // Stuff to deal with later
-  //****************************************
-
-  // this.ended = false; // Checking if game is over
 } // end of object creator
 
 //****************************************
