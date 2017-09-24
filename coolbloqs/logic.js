@@ -14,6 +14,9 @@ function CoolBloqs(/*width, length*/) {
 
   this.availableColors = ["#084C61", "#56A3A6", "#F7B801", "#DB504A"]; // Possible tiles colors (1st iteration has 4 fixed colors)
 
+  this.maxTurns = Math.floor((this.boardsize.length * this.availableColors.length) / 5);
+  this.countTurns = 0;
+
   //****************************************
   // Generating a board filled with random tiles
   //****************************************
@@ -150,6 +153,7 @@ CoolBloqs.prototype.play = function(color) {
 
   if (this.twoPlayers === 0) {
     this.currentPlayer = 0;
+    this.countTurns++;
   } else {
 
   if (this.currentPlayer === 0) {

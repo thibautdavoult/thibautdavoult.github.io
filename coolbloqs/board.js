@@ -11,7 +11,7 @@ $(document).ready(function() {
   var visualBoard = $(".board");
   render();
 
-  // Display on actual site page
+// Display on actual site page
 
   function boardUpdate() {
     var that = this;
@@ -34,6 +34,8 @@ $(document).ready(function() {
     }
   }
 
+// rendering the board
+
   function render() {
     playerTurnUpdate();
     boardUpdate();
@@ -44,23 +46,34 @@ $(document).ready(function() {
 
   function playerTurnUpdate() {
     $(".playerturn").text(function() {
-      if (game.currentPlayer === 0) {
-        return "Player 1's turn";
-      }
-      else if (game.currentPlayer === 1) {
-        return "Player 2's turn";
+      if (game.twoPlayers === 1) {
+        if (game.currentPlayer === 0) {
+          return "Player 1's turn";
+        }
+        else if (game.currentPlayer === 1) {
+          return "Player 2's turn";
+        }
+      } else if (game.countTurns < game.maxTurns) {
+        return game.countTurns + " / " + game.maxTurns + " moves left";
+      } else if (game.countTurns >= game.maxTurns) {
+        $(".playerturn").html("YOU LOST");
+        $("button.btn-restart").show();
       }
     });
   }
 
   function gameEndUpdate() {
     $("button.btn-restart").show();
-    console.log("gameEndUpdate called");
-    if (game.victory === 1) {
-      $(".playerturn").html("PLAYER 2 WINS");
+    if (game.twoPlayers === 1) {
+      if (game.victory === 1) {
+        $(".playerturn").html("PLAYER 2 WINS");
+      }
+      else if (game.victory === 0) {
+        $(".playerturn").html("PLAYER 1 WINS");
+      }
     }
-    else if (game.victory === 0) {
-      $(".playerturn").html("PLAYER 1 WINS");
+    else if (game.countTurns <= game.maxTurns && game.victory === 0) {
+      $(".playerturn").html("YOU WON!!");
     }
   }
 
@@ -69,33 +82,36 @@ $(document).ready(function() {
 
 
   $("button.btn-restart").click(function() {
-    console.log("page should reload");
      window.location.reload();
 
   });
 
-  //****************************************
-  // 2 players toggle
-  //****************************************
+//****************************************
+// 2 players toggle
+//****************************************
+
+// on/off toggle switching between 2 players
 
 $(".switch").mouseup(function() {
   switch (game.twoPlayers) {
     case 1:
       game.twoPlayers = 0;
-      console.log(game.twoPlayers);
+      playerTurnUpdate();
       break;
     case 0:
       game.twoPlayers = 1;
-      console.log(game.twoPlayers);
+      playerTurnUpdate();
       break;
   }
 });
 
+//
 
+// 1 Player max turns : 28 for 20x20 with 4 colors
 
-  //****************************************
-  // 2. Player's action assigned to a key
-  //****************************************
+//****************************************
+// Player's action assigned to a key
+//****************************************
 
   $(document).keyup(function(k) {
     if (game.currentPlayer === 0) {
