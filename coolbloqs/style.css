@@ -22,7 +22,7 @@ h1 {
 
 h2 {
   font-family: "Open Sans";
-  margin: 26px 0;
+  margin: 10px 0 20px;
 }
 
 .container {
@@ -35,6 +35,80 @@ h2 {
 .container-titlepart {
   display: flex;
   flex-direction: row;
+}
+
+.twoplayers-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.twoplayers-container p {
+  margin: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+/*default
+width: 60px;
+height: 34px;
+*/
+
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #E0ACD5;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #E0ACD5;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .slide:hover, .slide:focus {
@@ -56,6 +130,16 @@ h2 {
   padding: 0em 15px;
 }
 
+.twoplayers-switch {
+  transition: 0.25s;
+  background: none;
+  border: 2px solid;
+  border-radius: 10px;
+  font: inherit;
+  margin: 15px 0 0px 0;
+  padding: 0em 15px;
+}
+
 .footer {
   margin: 40px 0 0 0;
 }
@@ -66,11 +150,12 @@ a {
 }
 
 .board {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   background-color: #4f6d7a;
   text-align: center;
   position: relative;
+  /*border: 2px solid #4f6d7a;*/
 }
 
 .margin-left {

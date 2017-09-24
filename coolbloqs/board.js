@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     for (row = 0; row < game.boardsize.length; row++) {
       for (col = 0; col < game.boardsize.width; col++) {
-        var cellSize = 25;
+        var cellSize = 20;
         var rowCell = row * cellSize;
         var colCell = col * cellSize;
         visualBoard.append(
@@ -73,6 +73,26 @@ $(document).ready(function() {
      window.location.reload();
 
   });
+
+  //****************************************
+  // 2 players toggle
+  //****************************************
+
+$(".switch").mouseup(function() {
+  switch (game.twoPlayers) {
+    case 1:
+      game.twoPlayers = 0;
+      console.log(game.twoPlayers);
+      break;
+    case 0:
+      game.twoPlayers = 1;
+      console.log(game.twoPlayers);
+      break;
+  }
+});
+
+
+
   //****************************************
   // 2. Player's action assigned to a key
   //****************************************
@@ -107,4 +127,6 @@ $(document).ready(function() {
   }
     render();
   });
+
+
 });

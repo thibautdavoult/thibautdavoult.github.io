@@ -47,6 +47,8 @@ function CoolBloqs(/*width, length*/) {
     this.board[that.boardsize.length - 1][that.boardsize.width - 1].color
   ];
 
+  this.twoPlayers = 0;
+
   this.currentPlayer = 0; // Turn based 1v1 game. Starts with Player 1 turn (value 0), changes to (value 1) for Player 2 and back to 0, handled in the play() function.
 
   this.victory = null;
@@ -146,10 +148,14 @@ CoolBloqs.prototype.play = function(color) {
 
   that.checkEnd();
 
+  if (this.twoPlayers === 0) {
+    this.currentPlayer = 0;
+  } else {
+
   if (this.currentPlayer === 0) {
     this.currentPlayer = 1;
   } else this.currentPlayer = 0;
-};
+  }};
 
 CoolBloqs.prototype.checkEnd = function() {
   if (this.get(0, 0).ownership === 1) {
@@ -158,3 +164,7 @@ CoolBloqs.prototype.checkEnd = function() {
     this.victory = 0;
   } else this.victory = null;
 };
+
+//****************************************
+// Solo / Two players configuration
+//****************************************
