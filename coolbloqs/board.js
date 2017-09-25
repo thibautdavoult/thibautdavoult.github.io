@@ -86,7 +86,7 @@ $(document).ready(function() {
     }
   }
 
-
+  $(".playerturn").text(game.countTurns + " / " + game.maxTurns + " moves left")
   $("button.btn-restart").hide();
   $("button.btn-restart").click(function() {
      window.location.reload();
