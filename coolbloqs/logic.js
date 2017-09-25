@@ -50,7 +50,7 @@ function CoolBloqs(/*width, length*/) {
     this.board[that.boardsize.length - 1][that.boardsize.width - 1].color
   ];
 
-  this.twoPlayers = 0;
+  this.twoPlayers = 0; // Setting 1 or 2 players. 0 = 1 player, 1 = 2 players.
 
   this.currentPlayer = 0; // Turn based 1v1 game. Starts with Player 1 turn (value 0), changes to (value 1) for Player 2 and back to 0, handled in the play() function.
 
@@ -60,6 +60,7 @@ function CoolBloqs(/*width, length*/) {
 
   this.contaminate(this.board[0][0]); // no need to specify ownership because tile already has the info
   this.contaminate(this.board[that.boardsize.length - 1][that.boardsize.width - 1]);
+  this.checkingOwnedTiles();
 
 } // end of object creator
 
@@ -123,7 +124,7 @@ CoolBloqs.prototype.contaminate = function(cell) {
 //****************************************
 
 CoolBloqs.prototype.play = function(color) {
-  if (this.currentColor[this.currentPlayer] === color) {
+  if (!this.legalColors().includes(color)) {
     return;
   }
 
@@ -131,21 +132,11 @@ CoolBloqs.prototype.play = function(color) {
 
   var that = this;
 
-  var playerOwnedTiles = that.board
-    .map(function(row) {
-      return row.filter(function(cell) {
-        return cell.ownership === that.currentPlayer;
-      });
-    })
-    .reduce(function(a, b) {
-      return a.concat(b);
-    }, []);
-
-  playerOwnedTiles.forEach(function(cell) {
+  this.currentOwnedTiles.forEach(function(cell) {
     cell.color = that.currentColor[that.currentPlayer];
   });
 
-  playerOwnedTiles.forEach(function(cell) {
+  this.currentOwnedTiles.forEach(function(cell) {
     that.contaminate(cell);
   });
 
@@ -155,11 +146,14 @@ CoolBloqs.prototype.play = function(color) {
     this.currentPlayer = 0;
     this.countTurns++;
   } else {
-
-  if (this.currentPlayer === 0) {
-    this.currentPlayer = 1;
-  } else this.currentPlayer = 0;
-  }};
+    if (this.currentPlayer === 0) {
+      this.currentPlayer = 1;
+    } else {
+      this.currentPlayer = 0;
+    }
+  }
+  this.checkingOwnedTiles();
+};
 
 CoolBloqs.prototype.checkEnd = function() {
   if (this.get(0, 0).ownership === 1) {
@@ -170,5 +164,20 @@ CoolBloqs.prototype.checkEnd = function() {
 };
 
 //****************************************
-// Solo / Two players configuration
+// Prevent playing a useless color
 //****************************************
+
+CoolBloqs.prototype.checkingOwnedTiles = function () {
+  this.currentOwnedTiles = this.board
+    .map(row => row.filter(cell => cell.ownership === this.currentPlayer))
+    .reduce((a, b) => a.concat(b), []);
+};
+
+
+CoolBloqs.prototype.legalColors = function () {
+  var colors = {};
+  this.availableColors.forEach(color => colors[color] = false);
+  this.currentOwnedTiles.forEach(cell => this.getNeighboors(cell).forEach(neighboor => colors[neighboor.color] = true));
+  colors[this.currentColor[this.currentPlayer]] = false;
+  return this.availableColors.filter(color => colors[color]);
+};
