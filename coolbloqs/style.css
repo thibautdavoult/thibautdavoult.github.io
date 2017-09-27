@@ -142,11 +142,16 @@ input:checked + .slider:before {
 
 .footer {
   margin: 40px 0 0 0;
+  font-size: 0.8em;
 }
 
 a {
   text-decoration: none;
-  color: #E5E5E5;
+  font-family: "Open Sans", sans-serif;
+}
+
+.grey {
+  color: #BFBFBF;
 }
 
 .board {
@@ -194,6 +199,16 @@ a {
   border: 1px solid black;
   border-radius: 5px;
   padding: 1px 10px;
+}
+
+.blue {
+  color: #3276b1;
+}
+
+.fa-footer {
+  margin-right: 20px;
+  font-family: "Open Sans", sans-serif;
+  display: inline-block;
 }
 
 @media (max-width: 600px) {
